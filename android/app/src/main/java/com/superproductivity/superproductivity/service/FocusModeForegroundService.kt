@@ -7,6 +7,7 @@ import android.os.IBinder
 import android.os.Looper
 import android.util.Log
 import androidx.core.app.NotificationManagerCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 class FocusModeForegroundService : Service() {
 
@@ -20,6 +21,7 @@ class FocusModeForegroundService : Service() {
         const val ACTION_RESUME = "com.superproductivity.ACTION_RESUME_FOCUS"
         const val ACTION_SKIP = "com.superproductivity.ACTION_SKIP_FOCUS"
         const val ACTION_COMPLETE = "com.superproductivity.ACTION_COMPLETE_FOCUS"
+        const val ACTION_TIMER_COMPLETE = "com.superproductivity.ACTION_TIMER_COMPLETE_FOCUS"
 
         const val EXTRA_TITLE = "title"
         const val EXTRA_TASK_TITLE = "task_title"
@@ -40,6 +42,7 @@ class FocusModeForegroundService : Service() {
     private var isBreak: Boolean = false
     private var isPaused: Boolean = false
     private var lastUpdateTimestamp: Long = 0
+    private var hasNotifiedCompletion: Boolean = false
 
     private val handler = Handler(Looper.getMainLooper())
     private val updateRunnable = object : Runnable {
@@ -52,7 +55,14 @@ class FocusModeForegroundService : Service() {
 
                 if (durationMs > 0) {
                     // Countdown mode: decrease remaining time
+                    val previousRemaining = remainingMs
                     remainingMs = (remainingMs - elapsed).coerceAtLeast(0)
+
+                    // Check for timer completion (only in countdown mode, not Flowtime)
+                    if (remainingMs == 0L && previousRemaining > 0L && !hasNotifiedCompletion) {
+                        onTimerComplete()
+                        return // Stop the runnable, timer is done
+                    }
                 } else {
                     // Flowtime mode: increase elapsed time (remainingMs is actually elapsed)
                     remainingMs += elapsed
@@ -123,6 +133,7 @@ class FocusModeForegroundService : Service() {
         Log.d(TAG, "Starting focus mode: title=$title, durationMs=$durationMs, remainingMs=$remainingMs, isBreak=$isBreak, isPaused=$isPaused")
 
         isRunning = true
+        hasNotifiedCompletion = false
         lastUpdateTimestamp = System.currentTimeMillis()
 
         // Start foreground immediately to avoid ANR
@@ -172,6 +183,34 @@ class FocusModeForegroundService : Service() {
         } catch (e: SecurityException) {
             Log.w(TAG, "No permission to post notification", e)
         }
+    }
+
+    private fun onTimerComplete() {
+        Log.d(TAG, "Timer completed! isBreak=$isBreak, title=$title")
+        hasNotifiedCompletion = true
+
+        // Show high-priority completion notification with sound
+        val completionTitle = if (isBreak) "Break Complete" else "Session Complete"
+        val completionMessage = if (isBreak) {
+            "Time to get back to work!"
+        } else {
+            taskTitle?.let { "Great job on: $it" } ?: "Great job! Take a break."
+        }
+        FocusModeNotificationHelper.showCompletionNotification(
+            this,
+            completionTitle,
+            completionMessage,
+            isBreak
+        )
+
+        // Notify the frontend via local broadcast
+        val intent = Intent(ACTION_TIMER_COMPLETE).apply {
+            putExtra(EXTRA_IS_BREAK, isBreak)
+        }
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+
+        // Stop the foreground service (timer is done)
+        stopFocusMode()
     }
 
     override fun onBind(intent: Intent?): IBinder? = null

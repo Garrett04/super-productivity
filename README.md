@@ -211,6 +211,12 @@ You can also install the app using [Chocolatey](https://community.chocolatey.org
 choco install super-productivity
 ```
 
+or using [Scoop](https://scoop.sh/#/apps?q=super-productivity&id=26ccca2d7edd51629727a9468c4136ea89a652a0):
+
+```powershell
+scoop install extras/super-productivity
+```
+
 ### Linux
 
 #### Snap - Most distributions

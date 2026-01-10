@@ -25,6 +25,7 @@ import { from, merge, of, timer, interval } from 'rxjs';
 import { TaskService } from '../tasks/task.service';
 import { SnackService } from '../../core/snack/snack.service';
 import { T } from 'src/app/t.const';
+import { GlobalConfigService } from '../config/global-config.service';
 
 @NgModule({
   declarations: [],
@@ -40,6 +41,7 @@ export class ReminderModule {
   private readonly _layoutService = inject(LayoutService);
   private readonly _taskService = inject(TaskService);
   private readonly _syncTriggerService = inject(SyncTriggerService);
+  private readonly _globalConfigService = inject(GlobalConfigService);
 
   constructor() {
     from(this._reminderService.init())
@@ -79,7 +81,7 @@ export class ReminderModule {
         ),
       )
       .subscribe((reminders: Reminder[]) => {
-        if (IS_ELECTRON) {
+        if (IS_ELECTRON && this._globalConfigService.cfg()?.reminder?.isFocusWindow) {
           this._uiHelperService.focusApp();
         }
 

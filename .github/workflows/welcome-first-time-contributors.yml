@@ -8,13 +8,17 @@ on:
     types:
       - opened
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/first-interaction@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           issue_message: |
             Hello there ${{ github.actor }}! 👋
 

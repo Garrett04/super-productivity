@@ -53,6 +53,8 @@ describe('DataValidationFailedError', () => {
     const error = new DataValidationFailedError(validationResult as any);
 
     expect(error.name).toBe('DataValidationFailedError');
+    expect(error.message).toContain('test.path');
+    expect(error.message).toContain('another.path');
     expect(error.additionalLog).toBeDefined();
     expect(error.additionalLog).toContain('test.path');
     expect(consoleLogSpy).toHaveBeenCalledWith(
@@ -64,6 +66,26 @@ describe('DataValidationFailedError', () => {
       '[pf]',
       jasmine.stringContaining('validation errors_:'),
     );
+  });
+
+  it('should include error paths in message with count for many errors', () => {
+    const validationResult = {
+      errors: [
+        { path: 'path.one', expected: 'string', value: 1 },
+        { path: 'path.two', expected: 'string', value: 2 },
+        { path: 'path.three', expected: 'string', value: 3 },
+        { path: 'path.four', expected: 'string', value: 4 },
+        { path: 'path.five', expected: 'string', value: 5 },
+      ],
+    };
+
+    const error = new DataValidationFailedError(validationResult as any);
+
+    expect(error.message).toContain('path.one');
+    expect(error.message).toContain('path.two');
+    expect(error.message).toContain('path.three');
+    expect(error.message).toContain('(+2 more)');
+    expect(error.message).not.toContain('path.four');
   });
 
   it('should truncate long error strings to 400 characters', () => {
@@ -87,6 +109,7 @@ describe('DataValidationFailedError', () => {
     const error = new DataValidationFailedError(validationResult as any);
 
     expect(error.name).toBe('DataValidationFailedError');
+    expect(error.message).toBe('Data validation failed');
     expect(consoleLogSpy).toHaveBeenCalledWith(
       '[pf]',
       'validation result: ',

@@ -156,4 +156,131 @@ describe('ReminderService', () => {
       expect(snoozedReminder.remindAt).toBeGreaterThanOrEqual(beforeSnooze + snoozeTime);
     });
   });
+
+  describe('duplicate reminder prevention', () => {
+    let messageHandler: (msg: MessageEvent) => Promise<void>;
+    let taskServiceSpy: jasmine.SpyObj<TaskService>;
+
+    beforeEach(async () => {
+      // Initialize service first to register the message handler
+      await service.init();
+
+      // Capture the message handler registered on the worker
+      const call = mockWorker.addEventListener.calls
+        .all()
+        .find((c) => c.args[0] === 'message');
+      messageHandler = call?.args[1] as unknown as (msg: MessageEvent) => Promise<void>;
+
+      // Get TaskService spy to configure task responses
+      taskServiceSpy = TestBed.inject(TaskService) as jasmine.SpyObj<TaskService>;
+    });
+
+    it('should not emit duplicate reminders when worker sends same reminder twice', async () => {
+      const testReminder = {
+        id: 'reminder-dup-1',
+        relatedId: 'task-dup-1',
+        title: 'Duplicate Test',
+        remindAt: Date.now() - 1000,
+        type: 'TASK' as const,
+      };
+
+      // Mock task exists and is not done
+      taskServiceSpy.getByIdOnce$.and.returnValue(
+        of({ id: 'task-dup-1', isDone: false } as any),
+      );
+
+      const emissions: any[] = [];
+      service.onRemindersActive$.subscribe((reminders) => {
+        emissions.push(reminders);
+      });
+
+      // Simulate worker sending same reminder twice (race condition)
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+
+      // Should only have one emission
+      expect(emissions.length).toBe(1);
+      expect(emissions[0].length).toBe(1);
+      expect(emissions[0][0].id).toBe('reminder-dup-1');
+    });
+
+    it('should allow reminder to emit again after snooze', async () => {
+      const reminderId = service.addReminder(
+        'TASK',
+        'task-snooze-emit',
+        'Snooze Emit Test',
+        Date.now() - 1000,
+      );
+
+      const testReminder = {
+        id: reminderId,
+        relatedId: 'task-snooze-emit',
+        title: 'Snooze Emit Test',
+        remindAt: Date.now() - 1000,
+        type: 'TASK' as const,
+      };
+
+      // Mock task exists and is not done
+      taskServiceSpy.getByIdOnce$.and.returnValue(
+        of({ id: 'task-snooze-emit', isDone: false } as any),
+      );
+
+      const emissions: any[] = [];
+      service.onRemindersActive$.subscribe((reminders) => {
+        emissions.push(reminders);
+      });
+
+      // First activation
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+      expect(emissions.length).toBe(1);
+
+      // Snooze the reminder (this should clear the processed state)
+      service.snooze(reminderId, 5000);
+
+      // Update the reminder time for the "new" activation
+      const snoozedReminder = { ...testReminder, remindAt: Date.now() - 500 };
+
+      // Second activation after snooze should work
+      await messageHandler({ data: [snoozedReminder] } as MessageEvent);
+      expect(emissions.length).toBe(2);
+    });
+
+    it('should clean up processed state after timeout', async () => {
+      jasmine.clock().install();
+
+      const testReminder = {
+        id: 'reminder-cleanup-1',
+        relatedId: 'task-cleanup-1',
+        title: 'Cleanup Test',
+        remindAt: Date.now() - 1000,
+        type: 'TASK' as const,
+      };
+
+      taskServiceSpy.getByIdOnce$.and.returnValue(
+        of({ id: 'task-cleanup-1', isDone: false } as any),
+      );
+
+      const emissions: any[] = [];
+      service.onRemindersActive$.subscribe((reminders) => {
+        emissions.push(reminders);
+      });
+
+      // First activation
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+      expect(emissions.length).toBe(1);
+
+      // Second activation should be blocked
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+      expect(emissions.length).toBe(1);
+
+      // Advance time by 61 seconds (cleanup happens at 60s)
+      jasmine.clock().tick(61000);
+
+      // Third activation should work after cleanup
+      await messageHandler({ data: [testReminder] } as MessageEvent);
+      expect(emissions.length).toBe(2);
+
+      jasmine.clock().uninstall();
+    });
+  });
 });

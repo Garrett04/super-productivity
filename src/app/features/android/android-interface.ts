@@ -97,6 +97,9 @@ export interface AndroidInterface {
   onFocusResume$: Subject<void>;
   onFocusSkip$: Subject<void>;
   onFocusComplete$: Subject<void>;
+
+  // Focus mode timer completion (native service detected timer reached 0)
+  onFocusModeTimerComplete$: Subject<boolean>; // boolean indicates isBreak
 }
 
 // setInterval(() => {
@@ -118,6 +121,7 @@ if (IS_ANDROID_WEB_VIEW) {
   androidInterface.onFocusResume$ = new Subject();
   androidInterface.onFocusSkip$ = new Subject();
   androidInterface.onFocusComplete$ = new Subject();
+  androidInterface.onFocusModeTimerComplete$ = new Subject();
   androidInterface.onShareWithAttachment$ = new ReplaySubject(1);
   androidInterface.isKeyboardShown$ = new BehaviorSubject(false);
 

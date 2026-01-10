@@ -9,10 +9,9 @@ export interface ScheduleEvent {
   style: string;
   startHours: number;
   timeLeftInHours: number;
-  isCloseToOthersFirst: boolean;
-  isCloseToOthers: boolean;
   dayOfMonth?: number;
   data?: SVE['data'];
+  overlap?: { count: number; offset: number };
 }
 
 export interface ScheduleDay {

@@ -340,6 +340,214 @@ describe('TaskReminderEffects', () => {
     });
   });
 
+  describe('removeTaskReminderSideEffects$', () => {
+    it('should call removeReminder when removing a task reminder', (done) => {
+      actions$ = of(
+        removeReminderFromTask({
+          id: 'task-123',
+          reminderId: 'rem-456',
+          isSkipToast: false,
+        }),
+      );
+
+      effects.removeTaskReminderSideEffects$.subscribe(() => {
+        expect(reminderServiceMock.removeReminder).toHaveBeenCalledWith('rem-456');
+        done();
+      });
+    });
+
+    it('should not call removeReminder when reminderId is falsy', (done) => {
+      actions$ = of(
+        removeReminderFromTask({
+          id: 'task-123',
+          reminderId: undefined as any,
+          isSkipToast: false,
+        }),
+      );
+
+      let emitted = false;
+      effects.removeTaskReminderSideEffects$.subscribe({
+        next: () => {
+          emitted = true;
+        },
+      });
+
+      // Give some time for potential emission
+      setTimeout(() => {
+        expect(emitted).toBe(false);
+        expect(reminderServiceMock.removeReminder).not.toHaveBeenCalled();
+        done();
+      }, 50);
+    });
+
+    it('should handle isSkipToast flag', (done) => {
+      const snackServiceMock = TestBed.inject(
+        SnackService,
+      ) as jasmine.SpyObj<SnackService>;
+
+      actions$ = of(
+        removeReminderFromTask({
+          id: 'task-123',
+          reminderId: 'rem-456',
+          isSkipToast: true,
+        }),
+      );
+
+      effects.removeTaskReminderSideEffects$.subscribe(() => {
+        expect(snackServiceMock.open).not.toHaveBeenCalled();
+        expect(reminderServiceMock.removeReminder).toHaveBeenCalledWith('rem-456');
+        done();
+      });
+    });
+  });
+
+  // Test the Android native alarm cancellation logic separately
+  // (IS_ANDROID_WEB_VIEW is a compile-time constant, so we test the logic directly)
+  describe('removeTaskReminderSideEffects$ - Android cancellation logic', () => {
+    /**
+     * Tests for the native Android alarm cancellation added in fix for issue #5921.
+     * When a reminder is removed, the native Android alarm should be cancelled
+     * to prevent it from firing at the original scheduled time.
+     */
+
+    let cancelNativeReminderSpy: jasmine.Spy;
+    let generateNotificationIdSpy: jasmine.Spy;
+    let removeReminderSpy: jasmine.Spy;
+
+    // Replicate the Android cancellation logic for testing
+    const cancelAndroidReminderIfNeeded = (
+      isAndroid: boolean,
+      taskId: string,
+      reminderId: string,
+      generateNotificationId: (id: string) => number,
+      cancelNativeReminder: (id: number) => void,
+      removeReminder: (id: string) => void,
+    ): void => {
+      if (isAndroid) {
+        try {
+          const notificationId = generateNotificationId(taskId);
+          cancelNativeReminder(notificationId);
+        } catch (e) {
+          console.error('Failed to cancel native reminder:', e);
+        }
+      }
+      removeReminder(reminderId);
+    };
+
+    beforeEach(() => {
+      cancelNativeReminderSpy = jasmine.createSpy('cancelNativeReminder');
+      generateNotificationIdSpy = jasmine
+        .createSpy('generateNotificationId')
+        .and.returnValue(12345);
+      removeReminderSpy = jasmine.createSpy('removeReminder');
+    });
+
+    it('should cancel native Android reminder before removing reminder', () => {
+      const callOrder: string[] = [];
+      cancelNativeReminderSpy.and.callFake(() => callOrder.push('cancelNative'));
+      removeReminderSpy.and.callFake(() => callOrder.push('removeReminder'));
+
+      cancelAndroidReminderIfNeeded(
+        true, // isAndroid
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(callOrder).toEqual(['cancelNative', 'removeReminder']);
+    });
+
+    it('should generate notification ID from task ID (not reminder ID)', () => {
+      cancelAndroidReminderIfNeeded(
+        true,
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(generateNotificationIdSpy).toHaveBeenCalledWith('task-123');
+      expect(generateNotificationIdSpy).not.toHaveBeenCalledWith('rem-456');
+    });
+
+    it('should pass generated notification ID to cancelNativeReminder', () => {
+      generateNotificationIdSpy.and.returnValue(99999);
+
+      cancelAndroidReminderIfNeeded(
+        true,
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(cancelNativeReminderSpy).toHaveBeenCalledWith(99999);
+    });
+
+    it('should NOT call cancelNativeReminder on non-Android platforms', () => {
+      cancelAndroidReminderIfNeeded(
+        false, // isAndroid = false
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(cancelNativeReminderSpy).not.toHaveBeenCalled();
+      expect(generateNotificationIdSpy).not.toHaveBeenCalled();
+    });
+
+    it('should still call removeReminder on non-Android platforms', () => {
+      cancelAndroidReminderIfNeeded(
+        false,
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(removeReminderSpy).toHaveBeenCalledWith('rem-456');
+    });
+
+    it('should still call removeReminder even if cancelNativeReminder throws', () => {
+      cancelNativeReminderSpy.and.throwError('Native error');
+
+      cancelAndroidReminderIfNeeded(
+        true,
+        'task-123',
+        'rem-456',
+        generateNotificationIdSpy,
+        cancelNativeReminderSpy,
+        removeReminderSpy,
+      );
+
+      expect(removeReminderSpy).toHaveBeenCalledWith('rem-456');
+    });
+
+    it('should handle error gracefully when generateNotificationId throws', () => {
+      generateNotificationIdSpy.and.throwError('ID generation error');
+
+      expect(() => {
+        cancelAndroidReminderIfNeeded(
+          true,
+          'task-123',
+          'rem-456',
+          generateNotificationIdSpy,
+          cancelNativeReminderSpy,
+          removeReminderSpy,
+        );
+      }).not.toThrow();
+
+      expect(removeReminderSpy).toHaveBeenCalledWith('rem-456');
+    });
+  });
+
   describe('unscheduleDoneTask$', () => {
     it('should dispatch unscheduleTask when task with reminder is marked done', (done) => {
       const taskWithReminder = createMockTask({

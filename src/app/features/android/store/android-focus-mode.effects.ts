@@ -166,6 +166,29 @@ export class AndroidFocusModeEffects {
       ),
     );
 
+  // Handle native timer completion (when native service detects timer reached 0 in background)
+  handleNativeTimerComplete$ =
+    IS_ANDROID_WEB_VIEW &&
+    createEffect(() =>
+      androidInterface.onFocusModeTimerComplete$.pipe(
+        tap((isBreak) =>
+          DroidLog.log(
+            'AndroidFocusModeEffects: Native timer complete received, isBreak=' + isBreak,
+          ),
+        ),
+        withLatestFrom(this._store.select(selectPausedTaskId)),
+        map(([isBreak, pausedTaskId]) => {
+          if (isBreak) {
+            // Break timer completed, skip the break (go back to work)
+            return focusModeActions.skipBreak({ pausedTaskId });
+          } else {
+            // Work session completed
+            return focusModeActions.completeFocusSession({ isManual: false });
+          }
+        }),
+      ),
+    );
+
   private _safeNativeCall(fn: () => void, errorMsg: string, showSnackbar = false): void {
     try {
       fn();

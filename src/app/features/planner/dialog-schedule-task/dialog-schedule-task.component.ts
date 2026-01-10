@@ -102,6 +102,12 @@ export class DialogScheduleTaskComponent implements AfterViewInit {
   private _globalConfigService = inject(GlobalConfigService);
   private readonly _dateAdapter = inject(DateAdapter);
 
+  // Wait for localization config to be loaded before rendering calendar
+  // This ensures DateAdapter.getFirstDayOfWeek() returns the correct value
+  readonly isConfigReady = computed(
+    () => this._globalConfigService.localization() !== undefined,
+  );
+
   T: typeof T = T;
   minDate = new Date();
   readonly calendar = viewChild.required(MatCalendar);

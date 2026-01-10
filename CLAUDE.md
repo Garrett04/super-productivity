@@ -104,6 +104,17 @@ The app uses NgRx (Redux pattern) for state management. Key state slices:
 5. **Electron Context**: Check `IS_ELECTRON` before using Electron-specific features.
 6. **Privacy**: No analytics or tracking. User data stays local unless explicitly synced.
 
+## Git Commit Messages
+
+Use Angular commit message format: `type(scope): description`
+
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`
+- **Scope**: Optional, e.g., `tasks`, `projects`, `sync`
+- **Examples**:
+  - `feat(tasks): add recurring task support`
+  - `fix(sync): handle network timeout gracefully`
+  - `refactor(projects): simplify project selector logic`
+
 ## 🚫 Anti-Patterns → Do This Instead
 
 | Avoid                              | Do Instead                                    |

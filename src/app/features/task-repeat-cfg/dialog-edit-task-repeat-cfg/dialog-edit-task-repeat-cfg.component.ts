@@ -48,6 +48,7 @@ import { DialogConfirmComponent } from '../../../ui/dialog-confirm/dialog-confir
 import { GlobalConfigService } from '../../config/global-config.service';
 import { DEFAULT_GLOBAL_CONFIG } from '../../config/default-global-config.const';
 import { DateTimeFormatService } from 'src/app/core/date-time-format/date-time-format.service';
+import { RepeatTaskHeatmapComponent } from '../repeat-task-heatmap/repeat-task-heatmap.component';
 
 // TASK_REPEAT_CFG_FORM_CFG
 @Component({
@@ -65,6 +66,7 @@ import { DateTimeFormatService } from 'src/app/core/date-time-format/date-time-f
     MatDialogActions,
     MatButton,
     MatIcon,
+    RepeatTaskHeatmapComponent,
   ],
 })
 export class DialogEditTaskRepeatCfgComponent {
@@ -93,6 +95,14 @@ export class DialogEditTaskRepeatCfgComponent {
     if (this._data.repeatCfg) return true;
     if (this._data.task?.repeatCfgId) return true;
     return false;
+  });
+
+  repeatCfgId = computed(() => {
+    const cfg = this.repeatCfg();
+    if ('id' in cfg && cfg.id) {
+      return cfg.id;
+    }
+    return this._data.repeatCfg?.id || this._data.task?.repeatCfgId || null;
   });
 
   TASK_REPEAT_CFG_FORM_CFG_BEFORE_TAGS = signal<FormlyFieldConfig[]>([]);

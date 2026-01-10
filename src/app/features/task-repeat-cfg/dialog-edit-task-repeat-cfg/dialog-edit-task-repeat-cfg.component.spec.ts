@@ -1,5 +1,5 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
@@ -15,6 +15,17 @@ import { GlobalConfigService } from '../../config/global-config.service';
 import { DateTimeFormatService } from '../../../core/date-time-format/date-time-format.service';
 import { DEFAULT_TASK_REPEAT_CFG, TaskRepeatCfg } from '../task-repeat-cfg.model';
 import { TaskCopy } from '../../tasks/task.model';
+import { RepeatTaskHeatmapComponent } from '../repeat-task-heatmap/repeat-task-heatmap.component';
+
+// Stub component to replace RepeatTaskHeatmapComponent which has heavy dependencies
+@Component({
+  selector: 'repeat-task-heatmap',
+  template: '',
+  standalone: true,
+})
+class MockRepeatTaskHeatmapComponent {
+  repeatCfgId = input.required<string>();
+}
 
 describe('DialogEditTaskRepeatCfgComponent', () => {
   let mockDialogRef: jasmine.SpyObj<MatDialogRef<DialogEditTaskRepeatCfgComponent>>;
@@ -87,6 +98,7 @@ describe('DialogEditTaskRepeatCfgComponent', () => {
         TranslateModule.forRoot(),
         FormlyConfigModule,
         ReactiveFormsModule,
+        MockRepeatTaskHeatmapComponent,
       ],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
@@ -98,7 +110,16 @@ describe('DialogEditTaskRepeatCfgComponent', () => {
         { provide: GlobalConfigService, useValue: mockGlobalConfigService },
         { provide: DateTimeFormatService, useValue: mockDateTimeFormatService },
       ],
-    }).compileComponents();
+    })
+      .overrideComponent(DialogEditTaskRepeatCfgComponent, {
+        remove: {
+          imports: [RepeatTaskHeatmapComponent],
+        },
+        add: {
+          imports: [MockRepeatTaskHeatmapComponent],
+        },
+      })
+      .compileComponents();
 
     return TestBed.createComponent(DialogEditTaskRepeatCfgComponent);
   };

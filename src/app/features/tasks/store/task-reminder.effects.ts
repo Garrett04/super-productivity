@@ -272,6 +272,17 @@ export class TaskReminderEffects {
           }
         }),
         tap(({ id, reminderId }) => {
+          // On Android, immediately cancel native reminder to prevent alarm from firing
+          // after reminder is removed. This is necessary because the reactive cancellation
+          // via reminders$ observable can fail when the app is backgrounded.
+          if (IS_ANDROID_WEB_VIEW) {
+            try {
+              const notificationId = generateNotificationId(id);
+              androidInterface.cancelNativeReminder?.(notificationId);
+            } catch (e) {
+              console.error('Failed to cancel native reminder:', e);
+            }
+          }
           this._reminderService.removeReminder(reminderId as string);
         }),
       ),

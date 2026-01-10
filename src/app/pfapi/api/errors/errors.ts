@@ -427,7 +427,8 @@ export class DataValidationFailedError extends Error {
   additionalLog?: string;
 
   constructor(validationResult: IValidation<AllModelData<any>>) {
-    super('DataValidationFailedError');
+    const errorSummary = DataValidationFailedError._buildErrorSummary(validationResult);
+    super(errorSummary);
     PFLog.log('validation result: ', validationResult);
 
     try {
@@ -440,6 +441,25 @@ export class DataValidationFailedError extends Error {
     } catch (e) {
       PFLog.err('Failed to stringify validation errors:', e);
     }
+  }
+
+  private static _buildErrorSummary(
+    validationResult: IValidation<AllModelData<any>>,
+  ): string {
+    try {
+      if ('errors' in validationResult && Array.isArray(validationResult.errors)) {
+        const errors = validationResult.errors as IValidation.IError[];
+        const paths = errors
+          .slice(0, 3)
+          .map((e) => e.path)
+          .join(', ');
+        const suffix = errors.length > 3 ? ` (+${errors.length - 3} more)` : '';
+        return `Validation failed at: ${paths}${suffix}`;
+      }
+    } catch {
+      // Fall through to default message
+    }
+    return 'Data validation failed';
   }
 }
 

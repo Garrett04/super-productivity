@@ -1,3 +1,73 @@
+## [16.9.4](https://github.com/super-productivity/super-productivity/compare/v16.9.3...v16.9.4) (2026-01-10)
+
+### Bug Fixes
+
+- **ci:** update references for repo migration to super-productivity org ([9b7b01d](https://github.com/super-productivity/super-productivity/commit/9b7b01d24a282a96f36e644101681cc695656f0d))
+
+## [16.9.3](https://github.com/super-productivity/super-productivity/compare/v16.9.2...v16.9.3) (2026-01-10)
+
+### Bug Fixes
+
+- **calendar:** display proper error messages instead of [object Object] ([3b14a04](https://github.com/super-productivity/super-productivity/commit/3b14a049342d4bcfd96cc08b9dd0233bc0c839c4)), closes [#5870](https://github.com/super-productivity/super-productivity/issues/5870)
+- **e2e:** fix keyboard shortcut delete test and reduce sync test flakiness ([52bf171](https://github.com/super-productivity/super-productivity/commit/52bf171ec43057a8d77cd94ee3068eb49c1a46e8))
+- **schedule:** maintain visibility during task overlap on schedule ([#5887](https://github.com/super-productivity/super-productivity/issues/5887)) ([28c92cf](https://github.com/super-productivity/super-productivity/commit/28c92cf9447dca06adbafed2fc6b6e763156b32e))
+- **tasks:** add subscription cleanup to delete confirmation dialog ([adbea06](https://github.com/super-productivity/super-productivity/commit/adbea068da5b57865398b4477f16cc6ef8d73637))
+
+## [16.9.2](https://github.com/super-productivity/super-productivity/compare/v16.9.0...v16.9.2) (2026-01-09)
+
+### Bug Fixes
+
+- **e2e:** handle task deletion confirmation dialog in WebDAV sync test ([9c7549a](https://github.com/super-productivity/super-productivity/commit/9c7549af409df7a4ab91031c940f3fc78b35ad86))
+- resolve build failures from missing translations and unused imports ([dae5caa](https://github.com/super-productivity/super-productivity/commit/dae5caa6ff1f38c90ac99982563bc212c8b291c0))
+
+## [16.9.1](https://github.com/super-productivity/super-productivity/compare/v16.9.0...v16.9.1) (2026-01-09)
+
+### Bug Fixes
+
+- **e2e:** handle task deletion confirmation dialog in WebDAV sync test ([88c4db6](https://github.com/super-productivity/super-productivity/commit/88c4db63cb527388056966f8297635d4c527f675))
+- resolve build failures from missing translations and unused imports ([a2cd374](https://github.com/super-productivity/super-productivity/commit/a2cd374fb389a467c8b8235b2cdbc325f5fc71be))
+
+# [16.9.0](https://github.com/super-productivity/super-productivity/compare/v16.8.3...v16.9.0) (2026-01-09)
+
+### Bug Fixes
+
+- address code review issues from daily review ([a2e1f93](https://github.com/super-productivity/super-productivity/commit/a2e1f932f435f5ab1ca98749843e841210f39fa7))
+- address PR review comments for markdown toolbar ([f199a6d](https://github.com/super-productivity/super-productivity/commit/f199a6da8cdc446ac0abdf66425a98e5572a3e19))
+- **android:** cancel native notification when task marked done ([0a01f2e](https://github.com/super-productivity/super-productivity/commit/0a01f2ef6f0998ab8818af114d5725faea38a90e)), closes [#5899](https://github.com/super-productivity/super-productivity/issues/5899)
+- **android:** show notification with sound when focus mode timer completes in background ([dfa6a94](https://github.com/super-productivity/super-productivity/commit/dfa6a94a4b1c14311a6218c216b94e466b166af4)), closes [hi#priority](https://github.com/hi/issues/priority) [#5923](https://github.com/super-productivity/super-productivity/issues/5923)
+- **boards:** respect backlog filter for tasks from hidden projects ([9b1812d](https://github.com/super-productivity/super-productivity/commit/9b1812deeca9198c57882c83fafd5e4bdcde85c3)), closes [#5902](https://github.com/super-productivity/super-productivity/issues/5902)
+- **calendar:** poll all calendar tasks and prevent auto-move of existing tasks ([c2b7627](https://github.com/super-productivity/super-productivity/commit/c2b76271258c0ae92fede4b0285f144eb8437ef9)), closes [#4474](https://github.com/super-productivity/super-productivity/issues/4474)
+- **ci:** add issues write permission to autoresponse workflow ([80389c5](https://github.com/super-productivity/super-productivity/commit/80389c542f80b46a918f64faa1ea286c88c2b479)), closes [#5904](https://github.com/super-productivity/super-productivity/issues/5904)
+- **ci:** fix first-time contributor welcome action ([dc498ef](https://github.com/super-productivity/super-productivity/commit/dc498ef77d2a08568cfb1452e903132f66156e9a))
+- **e2e:** use fill() for time input in task-detail tests ([7d44438](https://github.com/super-productivity/super-productivity/commit/7d44438620781f42062ee463f75615d6adb17fab))
+- **focus-mode:** start break from banner when manual break start enabled ([7838d34](https://github.com/super-productivity/super-productivity/commit/7838d34fb0287b8c1107477f040efd85e8dbd566)), closes [#5889](https://github.com/super-productivity/super-productivity/issues/5889)
+- **gitlab:** use consistent update detection logic across methods ([93c3198](https://github.com/super-productivity/super-productivity/commit/93c319830fd638f00927ce7121baf503511a1e38)), closes [#5944](https://github.com/super-productivity/super-productivity/issues/5944)
+- **heatmap:** use app theme class instead of prefers-color-scheme ([159b289](https://github.com/super-productivity/super-productivity/commit/159b28948f10402a7dbfa5e1568262d2d6698b48)), closes [#5883](https://github.com/super-productivity/super-productivity/issues/5883)
+- **imex:** auto-fix deprecated metric/improvement array fields on import ([7bf9e93](https://github.com/super-productivity/super-productivity/commit/7bf9e9393e66ef30d60630fa0b6bae0827660083))
+- **imex:** show validation error details on import failure ([d2a13d2](https://github.com/super-productivity/super-productivity/commit/d2a13d21e307bae21f00efbdc21e3a00b2839a62))
+- **planner:** respect first day of week setting in schedule dialog ([2194cb9](https://github.com/super-productivity/super-productivity/commit/2194cb952dfced56e6e78685a801c05c65a7fcb9)), closes [#5935](https://github.com/super-productivity/super-productivity/issues/5935)
+- **reminder:** cancel native Android alarm when removing reminder ([ba9ceb2](https://github.com/super-productivity/super-productivity/commit/ba9ceb25fdd341c983dca6a9b37b23da3a51a7e1))
+- **reminder:** invoke cfg signal correctly to access reminder config ([10d652a](https://github.com/super-productivity/super-productivity/commit/10d652a3828f11ef750da3ff66db1a23d528ffc2))
+- **reminder:** prevent duplicate notifications from worker race condition ([5f724ad](https://github.com/super-productivity/super-productivity/commit/5f724ad16e448001e8a415e7b8146446ebfa9897)), closes [#5925](https://github.com/super-productivity/super-productivity/issues/5925)
+- **sync:** show meaningful error messages instead of minified class names ([89940e2](https://github.com/super-productivity/super-productivity/commit/89940e2d57b0b7c7daa78e56c1d8bc97d0b24bbc)), closes [#5905](https://github.com/super-productivity/super-productivity/issues/5905)
+
+### Features
+
+- **18n:** update translations ([b3ecfab](https://github.com/super-productivity/super-productivity/commit/b3ecfabc454e1508f9645cfac123be41516d9e1b))
+- add markdown formatting toolbar to notes editor ([e2bf969](https://github.com/super-productivity/super-productivity/commit/e2bf969397fdeb82c4d38274c52d45d4c7ccec88))
+- **calendar:** implement polling for calendar task updates and enhance data retrieval logic ([5ee3fb2](https://github.com/super-productivity/super-productivity/commit/5ee3fb2e2325ea5aa8a6184ebad9760aa18c8c67)), closes [#4474](https://github.com/super-productivity/super-productivity/issues/4474)
+- **i18n:** connect Finnish and Swedish translation files ([d033b9b](https://github.com/super-productivity/super-productivity/commit/d033b9b43b5a699358ecb2f11053f4f1c188b077))
+- integrate auto-save from master for toolbar actions ([e312cd9](https://github.com/super-productivity/super-productivity/commit/e312cd9094a8fd13fcd5bae5f89182e8ec9aa999))
+- **reminder:** add option to disable window focus on reminder ([6d1f5a7](https://github.com/super-productivity/super-productivity/commit/6d1f5a711315183ff6f3878c3157d485e569975d)), closes [#5922](https://github.com/super-productivity/super-productivity/issues/5922)
+- **task-repeat:** add history heatmap to repeat config dialog ([73690c3](https://github.com/super-productivity/super-productivity/commit/73690c37663efb59fc9129de7f99a9c592961527))
+- **tasks:** add confirmation dialog before task deletion ([f395413](https://github.com/super-productivity/super-productivity/commit/f3954131ac3acf2b439f91420f058fcfeea7ff6d)), closes [#5942](https://github.com/super-productivity/super-productivity/issues/5942)
+- **tasks:** show focus session option in context menu on mobile ([6d96cab](https://github.com/super-productivity/super-productivity/commit/6d96cab5ae919e73af4b40d0a8056503a1e34301))
+- **work-view:** show day of week in scheduled date group headers ([d475d88](https://github.com/super-productivity/super-productivity/commit/d475d88da3dc9de48466c8f10260139fb0a206c5)), closes [#5941](https://github.com/super-productivity/super-productivity/issues/5941)
+
+### Reverts
+
+- remove translation stubs from non-English language files ([11777a9](https://github.com/super-productivity/super-productivity/commit/11777a9d488baff0714bb8938dddca803faa7e85))
+
 ## [16.8.3](https://github.com/super-productivity/super-productivity/compare/v16.8.2...v16.8.3) (2026-01-04)
 
 ### Bug Fixes

@@ -22,25 +22,18 @@ import { MatIcon } from '@angular/material/icon';
 import { SnackService } from '../../../core/snack/snack.service';
 import { ShareService } from '../../../core/share/share.service';
 import { DateAdapter } from '@angular/material/core';
-
-interface DayData {
-  date: Date;
-  dateStr: string;
-  taskCount: number;
-  timeSpent: number;
-  level: number; // 0-4 for color intensity
-}
-
-interface WeekData {
-  days: (DayData | null)[];
-}
+import {
+  DayData,
+  WeekData,
+  HeatmapComponent,
+} from '../../../ui/heatmap/heatmap.component';
 
 @Component({
   selector: 'activity-heatmap',
   templateUrl: './activity-heatmap.component.html',
   styleUrls: ['./activity-heatmap.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TranslatePipe, MatIconButton, MatTooltip, MatIcon],
+  imports: [TranslatePipe, MatIconButton, MatTooltip, MatIcon, HeatmapComponent],
 })
 export class ActivityHeatmapComponent {
   private readonly _worklogService = inject(WorklogService);
@@ -408,30 +401,6 @@ export class ActivityHeatmapComponent {
     }
 
     return { weeks, monthLabels };
-  }
-
-  getDayClass(day: DayData | null): string {
-    if (!day) {
-      return 'day empty';
-    }
-    return `day level-${day.level}`;
-  }
-
-  getDayTitle(day: DayData | null): string {
-    if (!day) {
-      return '';
-    }
-    return `${day.dateStr}: ${day.taskCount} tasks, ${this._formatTime(day.timeSpent)}`;
-  }
-
-  private _formatTime(ms: number): string {
-    const hours = Math.floor(ms / (1000 * 60 * 60));
-    const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-
-    if (hours > 0) {
-      return `${hours}h ${minutes}m`;
-    }
-    return `${minutes}m`;
   }
 
   async shareHeatmap(): Promise<void> {

@@ -1,15 +1,4 @@
 {
-  "ANDROID": {
-    "NOTIFICATIONS": {
-      "SYNC_CONFLICT_MSG": "Please check and decide what to do.",
-      "SYNC_CONFLICT_TITLE": "A sync conflict occurred"
-    },
-    "PERMANENT_NOTIFICATION_MSGS": {
-      "INITIAL": "App running in background to allow for syncing if enabled",
-      "NO_ACTIVE_TASKS": "No active tasks",
-      "SYNCING": "Syncing"
-    }
-  },
   "APP": {
     "B_INSTALL": {
       "IGNORE": "Ignore",
@@ -21,8 +10,6 @@
       "CHANGE_BACKGROUND": "Change Background"
     },
     "SKIP_SYNC_WAIT": "Skip waiting for sync",
-    "UPDATE_MAIN_MODEL": "Super Productivity has gotten a major update! Some migrations for your data are required. Please note that this renders your data incompatible with older versions of the app.",
-    "UPDATE_MAIN_MODEL_NO_UPDATE": "No model update chosen. Please note that you either have to downgrade to the last version, if you do not want to perform the model upgrade.",
     "UPDATE_WEB_APP": "New version available. Load New Version?"
   },
   "BL": {
@@ -30,8 +17,7 @@
   },
   "BN": {
     "SHOW_ISSUE_PANEL": "Show Issue Panel",
-    "SHOW_NOTES": "Show Project Notes",
-    "SHOW_TASK_VIEW_CUSTOMIZER_PANEL": "Show Filter/Group/Sort Panel"
+    "SHOW_NOTES": "Show Project Notes"
   },
   "CONFIRM": {
     "AUTO_FIX": "Your data seems to be damaged (\"{{validityError}}\"). Do you want to try to automatically fix it? This might result in partial data loss.",
@@ -41,11 +27,7 @@
     "RESTORE_STRAY_BACKUP": "During last sync there might have been some error. Do you want to restore the last backup?"
   },
   "DATETIME_SCHEDULE": {
-    "LATER_TODAY": "Later Today",
-    "NEXT_WEEK": "Next Week",
-    "PLACEHOLDER": "Please select a date",
-    "PRESS_ENTER_AGAIN": "Press enter again to save",
-    "TOMORROW": "Tomorrow"
+    "PRESS_ENTER_AGAIN": "Press enter again to save"
   },
   "DIALOG_UNSPLASH_PICKER": {
     "BY": "by",
@@ -65,7 +47,6 @@
         "ADD_ATTACHMENT": "Add Attachment",
         "EDIT_ATTACHMENT": "Edit Attachment",
         "LABELS": {
-          "FILE": "File Path",
           "IMG": "Image",
           "LINK": "Url"
         },
@@ -81,7 +62,6 @@
       "DEFAULT": {
         "DONE": "Done",
         "EISENHAUER_MATRIX": "Eisenhower Matrix",
-        "IMPORTANT": "Important",
         "IN_PROGRESS": "In Progress",
         "KANBAN": "Kanban",
         "NOT_URGENT_IMPORTANT": "Not Urgent & Important",
@@ -118,9 +98,6 @@
       }
     },
     "CALDAV": {
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup CalDav for Project"
-      },
       "FORM": {
         "CALDAV_CATEGORY_FILTER": "Category to filter issues for (leave empty for none)",
         "CALDAV_PASSWORD": "Your CalDav password",
@@ -130,28 +107,14 @@
         "IS_TRANSITION_ISSUES_ENABLED": "Automatically complete CalDav todos on task completion"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Here you can configure SuperProductivity to list uncompleted CalDav todos for a specific project in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the todo as well as more information about it.</p> <p>In addition you can automatically add and sync all uncompleted todos to your task backlog.</p><p>To make it work for nextcloud in the webapp, you might need to whitelist \"https://app.super-productivity.com\" via the nextcloud app <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>.</p>",
-        "TITLE": "CalDav"
+        "HELP": "<p>Here you can configure SuperProductivity to list uncompleted CalDav todos for a specific project in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the todo as well as more information about it.</p> <p>In addition you can automatically add and sync all uncompleted todos to your task backlog.</p><p>To make it work for nextcloud in the webapp, you might need to whitelist \"https://app.super-productivity.com\" via the nextcloud app <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>.</p>"
       },
       "ISSUE_CONTENT": {
-        "ASSIGNEE": "Assignee",
-        "AT": "at",
-        "ATTACHMENTS": "Attachments",
-        "CHANGED": "changed",
-        "COMMENTS": "Comments",
-        "COMPONENTS": "Components",
         "DESCRIPTION": "Description",
-        "LABELS": "Categories",
-        "LIST_OF_CHANGES": "List of changes",
-        "MARK_AS_CHECKED": "Mark updates as checked",
-        "ON": "on",
-        "RELATED": "Related",
+        "LABELS": "Labels",
+        "MARK_AS_CHECKED": "Mark as checked",
         "STATUS": "Status",
-        "STORY_POINTS": "Story Points",
-        "SUB_TASKS": "Subtasks",
-        "SUMMARY": "Summary",
-        "WORKLOG": "Worklog",
-        "WRITE_A_COMMENT": "Write a comment"
+        "SUMMARY": "Summary"
       },
       "S": {
         "CALENDAR_NOT_FOUND": "CalDav: Calendar \"{{calendarName}}\" not found",
@@ -162,7 +125,6 @@
     "CALENDARS": {
       "BANNER": {
         "ADD_AS_TASK": "Add as Task",
-        "FOCUS_TASK": "",
         "SHOW_TASK": "Show Task",
         "TXT": "<strong>{{title}}</strong> starts at <strong>{{start}}</strong>!",
         "TXT_MULTIPLE": "<strong>{{title}}</strong> starts at <strong>{{start}}</strong>!<br> (and {{nrOfOtherBanners}} other events are due)",
@@ -201,10 +163,6 @@
     },
     "DROPBOX": {
       "S": {
-        "ACCESS_TOKEN_ERROR": "Dropbox: Unable to generate Access Token from Auth Code",
-        "ACCESS_TOKEN_GENERATED": "Dropbox: Access Token generated from Auth Code",
-        "AUTH_ERROR": "Dropbox: Invalid access token provided",
-        "AUTH_ERROR_ACTION": "Change Token",
         "OFFLINE": "Dropbox: Unable to sync, because offline",
         "SYNC_ERROR": "Dropbox: Error while syncing",
         "UNABLE_TO_GENERATE_PKCE_CHALLENGE": "Dropbox: Unable to generate PKCE challenge."
@@ -219,7 +177,6 @@
       "ADD_TIME_MINUTE": "Add 1 minute",
       "B": {
         "BREAK_RUNNING": "Break is running",
-        "END_BREAK": "End break",
         "END_SESSION": "End session",
         "PAUSE": "Pause",
         "POMODORO_BREAK_RUNNING": "Break #{{cycleNr}} is running",
@@ -233,25 +190,17 @@
       "BREAK_RELAX_MSG": "Take a moment to relax",
       "CLICK_TO_EDIT_DURATION": "Click to edit duration",
       "COMPLETE_FOCUS_SESSION": "Complete focus session",
-      "COMPLETE_SESSION": "Complete Session",
-      "CONGRATS": "Congrats for completing this session!",
-      "CONTINUE_FOCUS_SESSION": "",
-      "CONTINUE_SESSION": "Continue Session",
       "CONTINUE_TO_NEXT_SESSION": "Continue to next Session",
       "COUNTDOWN": "Countdown",
       "COUNTDOWN_HINT": "Focus until the clock hits zero",
-      "CURRENT_SESSION_TIME_TOOLTIP": "Current session time",
       "FINISH_TASK_AND_SELECT_NEXT": "Finish task and select next",
       "FLOWTIME": "Flowtime",
       "FLOWTIME_HINT": "Flexible pacing without strict timers",
       "FOCUS_TIME_TOOLTIP": "Focus time",
-      "FOR_TASK": "for task",
       "GET_READY": "Get ready for your focus session!",
-      "GO_TO_PROCRASTINATION": "Get help, when procrastinating",
       "GOGOGO": "Go, go, go!!!",
       "LONG_BREAK": "Long Break",
       "LONG_BREAK_TITLE": "Long Break - Cycle {{cycle}}",
-      "NEXT": "Next",
       "ON": "on",
       "OPEN_ISSUE_IN_BROWSER": "Open issue in Browser",
       "PAUSE_SESSION": "Pause session",
@@ -266,12 +215,10 @@
       "PREP_STRETCH": "Do some mild stretching",
       "REMOVE_TIME_MINUTE": "Remove 1 minute",
       "RESUME_SESSION": "Resume session",
-      "SELECT_ANOTHER_TASK": "Select another Task",
       "SELECT_MODE": "Choose your focus mode",
       "SELECT_TASK": "Select Task to focus on",
       "SELECT_TASK_TO_FOCUS": "Select Task to Focus",
       "SESSION_COMPLETED": "Focus Session Completed!",
-      "SET_FOCUS_SESSION_DURATION": "Set Focus Session Duration",
       "SHORT_BREAK": "Short Break",
       "SHORT_BREAK_TITLE": "Short Break - Cycle {{cycle}}",
       "SHOW_HIDE_NOTES_AND_ATTACHMENTS": "Show/hide task notes and attachments",
@@ -283,11 +230,7 @@
       "WORKED_FOR": "You worked for"
     },
     "GITEA": {
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup Gitea for Project"
-      },
       "FORM": {
-        "FILTER_USER": "Username (e.g. to filter out changes by yourself)",
         "HOST": "Host (e.g.: https://try.gitea.io)",
         "REPO_FULL_NAME": "Username or Organization name/project",
         "REPO_FULL_NAME_DESCRIPTION": "Can be found as part of the url, when viewing the project in the Browser.",
@@ -298,12 +241,10 @@
         "TOKEN": "Access Token"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Here you can configure SuperProductivity to list open Gitea issues for a specific repository in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically add and import all open issues.</p><p>To get by usage limits and to access you can provide a an access token.",
-        "TITLE": "Gitea"
+        "HELP": "<p>Here you can configure SuperProductivity to list open Gitea issues for a specific repository in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically add and import all open issues.</p><p>To get by usage limits and to access you can provide a an access token."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Assignee",
-        "AT": "at",
         "DESCRIPTION": "Description",
         "LABELS": "Labels",
         "MARK_AS_CHECKED": "Mark updates as checked",
@@ -311,15 +252,9 @@
         "STATUS": "Status",
         "SUMMARY": "Summary",
         "WRITE_A_COMMENT": "Write a comment"
-      },
-      "S": {
-        "ERR_UNKNOWN": "Gitea: Unknown error {{statusCode}} {{errorMsg}}. Api Rate limit exceeded?"
       }
     },
     "GITHUB": {
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup GitHub for Project"
-      },
       "FORM": {
         "FILTER_USER": "Username (e.g. to filter out changes by yourself)",
         "INVALID_TOKEN_MESSAGE": "Not a valid GitHub token. It must start with \"ghp_\".",
@@ -328,8 +263,7 @@
         "TOKEN": "Access Token"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Here you can configure SuperProductivity to list open GitHub issues for a specific repository in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically import all open issues.</p><p>To get by usage limits and to access you can provide a an access token. <a href='https://docs.github.com/en/free-pro-team@latest/developers/apps/scopes-for-oauth-apps'>More info about its scopes can be found here</a>.",
-        "TITLE": "GitHub"
+        "HELP": "<p>Here you can configure SuperProductivity to list open GitHub issues for a specific repository in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically import all open issues.</p><p>To get by usage limits and to access you can provide a an access token. <a href='https://docs.github.com/en/free-pro-team@latest/developers/apps/scopes-for-oauth-apps'>More info about its scopes can be found here</a>."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Assignee",
@@ -350,9 +284,6 @@
       }
     },
     "GITLAB": {
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup GitLab for Project"
-      },
       "DIALOG_SUBMIT_WORKLOG": {
         "PAST_DAY_INFO": "The prefilled duration contains untracked data from past days.",
         "T_ALREADY_TRACKED": "Already Tracked",
@@ -367,7 +298,7 @@
         "FILTER_USER": "Filter username",
         "GITLAB_BASE_URL": "Custom GitLab base URL (optional)",
         "PROJECT": "user name/project",
-        "PROJECT_HINT": "e.g. johannesjo/super-productivity",
+        "PROJECT_HINT": "e.g. super-productivity/super-productivity",
         "SCOPE": "Scope",
         "SCOPE_ALL": "All",
         "SCOPE_ASSIGNED": "Assigned to me",
@@ -381,8 +312,7 @@
         "TOKEN": "Access Token"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Here you can configure SuperProductivity to list open GitLab (either its the online version or a self-hosted instance) issues for a specific project in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically import all open issues.</p>",
-        "TITLE": "GitLab"
+        "HELP": "<p>Here you can configure SuperProductivity to list open GitLab (either its the online version or a self-hosted instance) issues for a specific project in the task creation panel in the daily planning view. They will be listed as suggestions and will provide a link to the issue as well as more information about it.</p> <p>In addition you can automatically import all open issues.</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Assignee",
@@ -414,20 +344,14 @@
         "ATTACHMENTS": "Attachments",
         "AUTHOR": "Author",
         "CATEGORY": "Category",
-        "CHANGED": "changed",
-        "COMMENTS": "Comments",
         "COMPONENTS": "Components",
         "DESCRIPTION": "Description",
-        "DONE_RATIO": "Done Ratio",
         "DUE_DATE": "Due Date",
         "LABELS": "Labels",
         "LAST_COMMENT": "Last comment",
-        "LIST_OF_CHANGES": "List of changes",
         "LOAD_ALL_COMMENTS": "Load all {{nr}} comments",
-        "LOAD_DESCRIPTION_AND_ALL_COMMENTS": "Load description & all comments",
         "LOCATION": "Location",
         "MARK_AS_CHECKED": "Mark updates as checked",
-        "ON": "on",
         "PRIORITY": "Priority",
         "RELATED": "Related",
         "START": "Start",
@@ -438,8 +362,7 @@
         "TIME_SPENT": "Time Spent",
         "TYPE": "Type",
         "VERSION": "Version",
-        "WORKLOG": "Worklog",
-        "WRITE_A_COMMENT": "Write a comment"
+        "WORKLOG": "Worklog"
       },
       "S": {
         "ERR_GENERIC": "{{issueProviderName}} Error: {{errTxt}}",
@@ -447,13 +370,9 @@
         "ERR_NOT_CONFIGURED": "{{issueProviderName}}: Not properly configured",
         "IMPORTED_MULTIPLE_ISSUES": "{{issueProviderName}}: Imported {{nr}} new {{issuesStr}}",
         "IMPORTED_SINGLE_ISSUE": "{{issueProviderName}}: Imported {{issueStr}} \"{{issueTitle}}\"",
-        "ISSUE_DELETED_OR_CLOSED": "{{issueProviderName}}: {{issueStrC}} \"{{issueTitle}}\" seems to be deleted or closed",
         "ISSUE_NO_UPDATE_REQUIRED": "{{issueProviderName}}: No update required",
         "ISSUE_UPDATE_MULTIPLE": "{{issueProviderName}}: Updated data for {{nr}} {{issuesStr}}",
         "ISSUE_UPDATE_SINGLE": "{{issueProviderName}}: Updated data for \"{{issueTitle}}\"",
-        "MANUAL_UPDATE_ISSUE_SUCCESS": "{{issueProviderName}}: Updated data for \"{{issueTitle}}\"",
-        "MISSING_ISSUE_DATA": "{{issueProviderName}}: Tasks with missing {{issueStr}} data found. Reloading.",
-        "NEW_COMMENT": "{{issueProviderName}}: New comment for \"{{issueTitle}}\"",
         "POLLING_BACKLOG": "{{issueProviderName}}: Polling for new {{issuesStr}}",
         "POLLING_CHANGES": "{{issueProviderName}}: Polling Changes for {{issuesStr}}"
       }
@@ -495,8 +414,7 @@
         "CURRENT_ASSIGNEE": "Current Assignee:",
         "CURRENT_STATUS": "Current Status:",
         "TASK_NAME": "Task name:",
-        "TITLE": "Jira: Update Status",
-        "UPDATE_STATUS": "Update Status"
+        "TITLE": "Jira: Update Status"
       },
       "DIALOG_WORKLOG": {
         "CHECKBOXES": {
@@ -531,8 +449,7 @@
         "HOST": "Host (e.g.: http://my-host.de:1234)",
         "PASSWORD": "Token / Password",
         "USE_PAT": "Use Personal Access Token instead (LEGACY)",
-        "USER_NAME": "Email / Username",
-        "WONKY_COOKIE_MODE": "Wonky Cookie Fallback Authentication (desktop app only)"
+        "USER_NAME": "Email / Username"
       },
       "FORM_SECTION": {
         "ADV_CFG": "Advanced Config",
@@ -574,23 +491,12 @@
         "EXTENSION_NOT_LOADED": "Super Productivity Extension not loaded. Reloading the page might help",
         "INSUFFICIENT_SETTINGS": "Insufficient Settings provided for Jira",
         "INVALID_RESPONSE": "Jira: Response contained invalid data",
-        "ISSUE_NO_UPDATE_REQUIRED": "Jira: \"{{issueText}}\" already up to date",
-        "MANUAL_UPDATE_ISSUE_SUCCESS": "Jira: Updated data for \"{{issueText}}\"",
-        "MISSING_ISSUE_DATA": "Jira: Tasks with missing issue data found. Reloading.",
         "NO_AUTO_IMPORT_JQL": "Jira: No search query defined for auto import",
         "NO_VALID_TRANSITION": "Jira: No valid transition configured",
         "TIMED_OUT": "Jira: Request timed out",
         "TRANSITION": "Jira: Set issue \"{{issueKey}}\" to \"{{name}}\"",
         "TRANSITION_SUCCESS": "Jira: Set issue {{issueKey}} to <strong>{{chosenTransition}}</strong>",
-        "TRANSITIONS_LOADED": "Jira: Transitions loaded. Use the selects below to assign them",
-        "UNABLE_TO_REASSIGN": "Jira: Unable to reassign ticket to yourself, because you didn't specify a username. Please visit the settings."
-      },
-      "STEPPER": {
-        "CREDENTIALS": "Credentials",
-        "DONE": "You are now done.",
-        "LOGIN_SUCCESS": "Login successful!",
-        "TEST_CREDENTIALS": "Test Credentials",
-        "WELCOME_USER": "Welcome {{user}}!"
+        "TRANSITIONS_LOADED": "Jira: Transitions loaded. Use the selects below to assign them"
       }
     },
     "MARKDOWN_PASTE": {
@@ -602,9 +508,6 @@
       "DIALOG_TITLE": "Pasted Markdown List detected!"
     },
     "METRIC": {
-      "BANNER": {
-        "CHECK": "I did it!"
-      },
       "CMP": {
         "ACTIVITY_HEATMAP": "Activity Heatmap",
         "AVG_BREAKS_PER_DAY": "Avg. breaks per day",
@@ -616,7 +519,6 @@
         "DAYS_WORKED": "Days worked",
         "FOCUS_SESSION_TRENDS": "Focus sessions over time",
         "GLOBAL_METRICS": "Global Metrics",
-        "MOOD_PRODUCTIVITY_OVER_TIME": "Mood and productivity over time",
         "NO_ADDITIONAL_DATA_YET": "No additional data collected yet. Use the form on the daily summary \"Evaluation\" panel to do so.",
         "PRODUCTIVITY_BREAKDOWN_OVER_TIME": "Productivity & Sustainability over time",
         "SIMPLE_CLICK_COUNTERS_OVER_TIME": "Click Counters over time",
@@ -631,28 +533,15 @@
         "TIME_SPENT": "Time Spent"
       },
       "EVAL_FORM": {
-        "ADD_NOTE_FOR_TOMORROW": "Add Note for tomorrow",
         "DAILY_STATE": "Daily State",
         "DAILY_STATE_TOOLTIP": "Quadrant system based on both scores (≥50 is high): Deep Flow (high/high), Overdrive (high/low), Recovery (low/high), Drift (low/low)",
-        "DISABLE_REPEAT_EVERY_DAY": "",
-        "ENABLE_REPEAT_EVERY_DAY": "",
         "ENERGY_LEVEL": "How's your energy?",
         "ENERGY_LEVEL_HINT": "😫 Exhausted – 😐 OK – 😊 Good",
         "FOCUS_WORK_TIME": "Focussed work time",
-        "HELP_H1": "",
-        "HELP_LINK_TXT": "",
-        "HELP_P1": "",
-        "HELP_P2": "",
         "IMPACT_OF_WORK": "How do you rate the impact of your work today?",
         "IMPACT_OF_WORK_HINT": "1: No meaningful progress – 4: Significant impact",
-        "IMPROVEMENTS": "",
-        "IMPROVEMENTS_TOMORROW": "",
-        "MOOD": "",
-        "MOOD_HINT": "",
         "NOTES": "",
-        "OBSTRUCTIONS": "",
         "PRODUCTIVITY": "",
-        "PRODUCTIVITY_HINT": "",
         "PRODUCTIVITY_SCORE": "Productivity Score",
         "PRODUCTIVITY_SCORE_TOOLTIP": "65% Impact (1-4 scale) • 30% Focus toward 4h target • 5% total work (capped at 10h)",
         "SCORE_BREAKDOWN_TITLE_PRODUCTIVITY": "7-Day Productivity Breakdown",
@@ -693,21 +582,10 @@
         "PLACEHOLDER_3": "Where did focus slip - and how can you protect it?",
         "PLACEHOLDER_4": "Which task gave you energy? Which drained it?",
         "PLACEHOLDER_5": "One thing to repeat. One thing to change.",
-        "REMIND_LABEL": "Remind me tomorrow about this",
-        "REMINDER_CREATED": "Reflection reminder scheduled for tomorrow",
-        "REMINDER_ERROR": "Could not schedule the reminder",
-        "REMINDER_NEEDS_TEXT": "Write a reflection before asking for a reminder",
-        "REMINDER_TASK_TITLE": "Revisit reflection note",
         "TITLE": "Reflection Note"
-      },
-      "S": {
-        "SAVE_METRIC": "Metric successfully saved"
       }
     },
     "NOTE": {
-      "D_ADD": {
-        "NOTE_LABEL": "Enter some text to save as note (you can use markdown)..."
-      },
       "D_FULLSCREEN": {
         "TOOLBAR": {
           "BOLD": "Bold",
@@ -756,9 +634,6 @@
         "SELECT_ISSUE_FOR_TRANSITIONS": "Select issue to load available transitions",
         "TRANSITION": "Transition Handling"
       },
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup OpenProject for Project"
-      },
       "DIALOG_TRACK_TIME": {
         "ACTIVITY": "Activity",
         "CURRENTLY_LOGGED": "Currently logged time: ",
@@ -775,8 +650,7 @@
         "CURRENT_STATUS": "Current Status:",
         "PERCENTAGE_DONE": "Progress:",
         "TASK_NAME": "Task name:",
-        "TITLE": "OpenProject: Update Status",
-        "UPDATE_STATUS": "Update Status"
+        "TITLE": "OpenProject: Update Status"
       },
       "FORM": {
         "FILTER_USER": "Filter username",
@@ -793,8 +667,7 @@
         "TOKEN": "Access Token"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Here you can configure SuperProductivity to list open OpenProject work packages. Please Note that for this to work in the browser you need to probably configure CORS for your OpenProject server, to allow access from app.super-productivity.com</p>",
-        "TITLE": "OpenProject"
+        "HELP": "<p>Here you can configure SuperProductivity to list open OpenProject work packages. Please Note that for this to work in the browser you need to probably configure CORS for your OpenProject server, to allow access from app.super-productivity.com</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Assignee",
@@ -822,9 +695,7 @@
     "PLANNER": {
       "D": {
         "ADD_PLANNED": {
-          "ADD_TO_TODAY": "Add to Today",
-          "RE_PLAN_ALL": "Reschedule all",
-          "TITLE": "Add planned tasks to Today"
+          "RE_PLAN_ALL": "Reschedule all"
         }
       },
       "EDIT_REPEATED_TASK": "Edit repeated task '{{taskName}}'",
@@ -836,55 +707,10 @@
         "REMOVED_PLAN_DATE": "Removed plan date for task '{{taskTitle}}'",
         "TASK_ALREADY_PLANNED": "Task is already planned for {{date}}",
         "TASK_PLANNED_FOR": "Task planned for <strong>{{date}}</strong>{{extra}}"
-      },
-      "TASK_DRAWER": "Task Drawer"
+      }
     },
     "POMODORO": {
       "BREAK_IS_DONE": "Focus break is over!"
-    },
-    "PROCRASTINATION": {
-      "BACK_TO_WORK": "Back to work!",
-      "COMP": {
-        "INTRO": "People with high procrastination levels usually have low self-compassion. So practice it! It improves your feeling of self-worth, fosters positive emotions and can help you overcome procrastination, of course. Try a little exercise:",
-        "L1": "Sit down for bit and stretch yourself, if you like, calm down a little bit",
-        "L2": "Try to listen to the thoughts and feelings that arise",
-        "L3": "Are you responding to yourself in a way that you would respond to a friend?",
-        "L4": "If the answer is no, imagine your friend in your situation. What you would say to them? What you would do for them?",
-        "OUTRO": "More exercises <a target=\"_blank\" href=\"https://drsoph.com/blog/2018/9/17/3-exercises-in-self-compassion\" target=\"_blank\">can be found here</a> or on <a target=\"_blank\" href=\"https://www.google.com/search?q=self+compassion+exercises&oq=self+compassion+excers&aqs=chrome.1.69i57j0l5.4303j0j7&sourceid=chrome&ie=UTF-8\" target=\"_blank\">google</a>.",
-        "TITLE": "Self Compassion"
-      },
-      "CUR": {
-        "INTRO": "Isn't procrastination interesting? It doesn't seem to make any sense to do it, since it is not in your long term interest at all. But still everybody does. It helps a lot explore und gain a better understanding on how it works for you personally! Some basic questions to ask yourself could be:",
-        "L1": "What feelings are eliciting your temptation to procrastinate?",
-        "L2": "Where do you feel them in your body?",
-        "L3": "What do they remind you of?",
-        "L4": "What happens to the thought of procrastinating as you observe it? Does it intensify? Dissipate? Cause other emotions to arise?",
-        "L5": "How are the sensations in your body shifting as you continue to rest your awareness on them?",
-        "PROCRASTINATION_TRIGGERS_TEXT": "Another very effective method is to record, what triggered your urge to procrastinate. For example I personally often have the urge to quickly jump to reddit or my favorite news site whenever my browser window comes into focus. Since I started writing down my triggers in a simple empty text document, I became aware of how ingrained this pattern was and it helped me to experiment with different counter measures.",
-        "PROCRASTINATION_TRIGGERS_TITLE": "Writing down your procrastination triggers",
-        "TITLE": "Curiosity"
-      },
-      "H1": "Cut yourself some slack!",
-      "INTRO": {
-        "AVOIDING": "Avoiding the task",
-        "FEAR": "Fear of failure",
-        "STRESSED": "Stressed about not getting things done",
-        "TITLE": "Intro"
-      },
-      "P1": "First of all: Relax! Everybody does procrastinate once in a while. And if you're not doing what you should, you should at least enjoy it!",
-      "P2": "Remember: <b>Procrastination is an emotion regulation problem, not a time management problem.</b> This means beating yourself up is not the solution, it is part of the problem. Let that sink in and then check the other tabs here for some further help.",
-      "REFRAME": {
-        "INTRO": "Think about what might be positive about the task despite its flaws.",
-        "TITLE": "Reframing",
-        "TL1": "What might be interesting about it?",
-        "TL2": "What is to gain if you complete it?",
-        "TL3": "How will you feel about it if you complete it?"
-      },
-      "SPLIT_UP": {
-        "INTRO": "Split up the task into as many small chunks as you can.",
-        "OUTRO": "Done? Then think about it. What would be – strictly theoretical – the first thing you would do <i>if</i> you were to start working on the task? Just think about it...",
-        "TITLE": "Split it up!"
-      }
     },
     "PROJECT": {
       "D_CONFIRM_DUPLICATE_BIG_PROJECT": {
@@ -895,14 +721,7 @@
       },
       "D_CREATE": {
         "CREATE": "Create Project",
-        "EDIT": "Edit Project",
-        "SETUP_CALDAV": "Setup Caldav Integration",
-        "SETUP_GIT": "Setup GitHub Integration",
-        "SETUP_GITEA_PROJECT": "Setup Gitea Integration",
-        "SETUP_GITLAB": "Setup GitLab Integration",
-        "SETUP_JIRA": "Setup Jira Integration",
-        "SETUP_OPEN_PROJECT": "Setup OpenProject Integration",
-        "SETUP_REDMINE_PROJECT": "Setup Redmine Integration"
+        "EDIT": "Edit Project"
       },
       "D_DELETE": {
         "MSG": "Are you sure you want to delete the project \"{{title}}\"?"
@@ -914,7 +733,6 @@
         "TITLE": "Basic Settings"
       },
       "FORM_THEME": {
-        "D_IS_DARK_THEME": "Won`t be used if system supports global dark mode.",
         "HELP": "Theme settings for your project.",
         "L_BACKGROUND_IMAGE_DARK": "Background Image Url (Dark Theme)",
         "L_BACKGROUND_IMAGE_LIGHT": "Background Image Url (Light Theme)",
@@ -926,18 +744,13 @@
         "L_HUE_WARN": "Threshold for dark text on warn color background",
         "L_IS_AUTO_CONTRAST": "Auto set text colors for best readability",
         "L_IS_DISABLE_BACKGROUND_TINT": "Disable colored background tint",
-        "L_IS_REDUCED_THEME": "Use reduced UI (no boxes around tasks)",
         "L_THEME_COLOR": "Theme Color",
-        "L_TITLE": "Title",
         "TITLE": "Theme"
       },
       "S": {
         "ARCHIVED": "Archived Project",
         "CREATED": "Created project <strong>{{title}}</strong>. You can select it from the menu on the top left.",
         "DELETED": "Deleted Project",
-        "E_EXISTS": "Project \"{{title}}\" already exists",
-        "E_INVALID_FILE": "Invalid data for project file",
-        "ISSUE_PROVIDER_UPDATED": "Updated project settings for <strong>{{issueProviderKey}}</strong>",
         "UNARCHIVED": "Unarchived project",
         "UPDATED": "Updated project settings"
       }
@@ -967,9 +780,6 @@
       "WEEK_TITLE": "Week {{nr}} ({{timeSpent}})"
     },
     "REDMINE": {
-      "DIALOG_INITIAL": {
-        "TITLE": "Setup Redmine for Project"
-      },
       "FORM": {
         "API_KEY": "API access key",
         "HOST": "Host (e.g.: https://redmine.org)",
@@ -990,9 +800,6 @@
         "MARK_AS_CHECKED": "Mark updates as checked",
         "PRIORITY": "Priority",
         "STATUS": "Status"
-      },
-      "S": {
-        "ERR_UNKNOWN": "Redmine: Unknown error {{statusCode}} {{errorMsg}}."
       }
     },
     "REFLECTION_NOTE": {
@@ -1001,7 +808,6 @@
     },
     "REMINDER": {
       "COUNTDOWN_BANNER": {
-        "HIDE": "Hide",
         "START_NOW": "Start now",
         "TXT": "<strong>{{title}}</strong> starts at <strong>{{start}}</strong>!",
         "TXT_MULTIPLE": "<strong>{{title}}</strong> starts at <strong>{{start}}</strong>!<br> (and {{nrOfOtherBanners}} other tasks are due)"
@@ -1009,66 +815,22 @@
       "S_ACTIVE_TASK_DUE": "The task you are currently working on is now due!<br/> ({{title}})",
       "S_REMINDER_ERR": "Error for reminder interface"
     },
-    "SAFETY_BACKUP": {
-      "BACKUP_NOT_FOUND": "",
-      "BTN_CLEAR_ALL": "",
-      "BTN_CREATE_MANUAL": "",
-      "BTN_DELETE": "",
-      "BTN_REFRESH": "",
-      "BTN_RESTORE": "",
-      "CLEAR_FAILED": "",
-      "CLEARED_SUCCESS": "",
-      "CREATE_FAILED": "",
-      "CREATED_SUCCESS": "",
-      "DELETE_FAILED": "",
-      "DELETED_SUCCESS": "",
-      "DESCRIPTION": "",
-      "INVALID_ID_ERROR": "",
-      "LAST_CHANGE_PREFIX": "",
-      "LOADING": "",
-      "NO_BACKUPS": "",
-      "REASON_BEFORE_UPDATE": "",
-      "REASON_MANUAL": "",
-      "RESTORE_CONFIRM_MSG": "",
-      "RESTORE_CONFIRM_TITLE": "",
-      "RESTORE_FAILED": "",
-      "RESTORED_SUCCESS": "",
-      "SLOT_BEFORE_TODAY": "",
-      "SLOT_RECENT": "",
-      "SLOT_TODAY": "",
-      "TITLE": "",
-      "TOOLTIP_CLEAR_ALL": "",
-      "TOOLTIP_CREATE_MANUAL": "",
-      "TOOLTIP_DELETE": "",
-      "TOOLTIP_REFRESH": "",
-      "TOOLTIP_RESTORE": ""
-    },
     "SCHEDULE": {
-      "CONTINUED": "continued",
       "D_INITIAL": {
         "TEXT": "<p>The Schedule should provide you with a better picture of how one's planned tasks play out over time. It is automatically generated from your Tasks and requires only <strong>time estimates on them to work</strong>.</p><p>Two things are distinguished: <strong>Scheduled Tasks</strong>, which are shown at their planned time and <strong>Regular Tasks</strong>, which should flow around those fixed events.</p><p>If you provide a work start and end time (recommended) regular tasks will never show up outside of these boundaries.</p>",
         "TITLE": "Schedule"
       },
       "END": "Work End",
       "INSERT_BEFORE": "Before",
-      "LUNCH_BREAK": "Lunch Break",
-      "MONTH": "Month",
-      "NO_TASKS": "Currently there are no tasks. Please add some tasks via the + Button in the top bar.",
-      "NOW": "Now",
       "PLAN_END_DAY": "End of {{date}}",
       "PLAN_START_DAY": "Start of {{date}}",
       "SHIFT_KEY_INFO": "Hold Shift to toggle day planning mode",
-      "START": "Work Start",
-      "TASK_PROJECTION_INFO": "Future projection of a scheduled repeatable task",
-      "WEEK": "Week"
+      "START": "Work Start"
     },
     "SEARCH_BAR": {
       "INFO": "Start typing to search for tasks",
-      "INFO_ARCHIVED": "Click on the archive icon to search for normal tasks",
       "NO_RESULTS": "No tasks found matching your search",
-      "PLACEHOLDER": "Search for task or task description",
-      "PLACEHOLDER_ARCHIVED": "Search for archived tasks",
-      "TOO_MANY_RESULTS": "Too many results, please narrow your search"
+      "PLACEHOLDER": "Search for task or task description"
     },
     "SIMPLE_COUNTER": {
       "D_CONFIRM_REMOVE": {
@@ -1087,7 +849,6 @@
         "L_COUNTDOWN_DURATION": "Countdown duration",
         "L_DAILY_GOAL": "Daily goal for successful streak",
         "L_ICON": "Icon",
-        "L_ICON_ON": "Icon when toggled",
         "L_IS_ENABLED": "Enabled",
         "L_TITLE": "Title",
         "L_TRACK_STREAKS": "Track Streaks",
@@ -1105,19 +866,11 @@
     },
     "SYNC": {
       "A": {
-        "ARCHIVE_ONLY_UPLOADED": "Your data was only partially uploaded. Please try again later! Otherwise you will not be able to sync your data to other devices.",
-        "POSSIBLE_LEGACY_DATA": "Super Productivity has improved syncing by now using two separate files rather than a single one, allowing for much less data transfer. It is recommended to update all instances of Super Productivity and to first sync data from the app instance where the data is newest. If this is the data from your local device then please ignore this warning and just proceed to upload it by confirming the next dialog.",
         "REMOTE_MODEL_VERSION_NEWER": "The remote model version is newer than the local one. Please update your local app to the newest version!"
       },
       "BTN_SYNC_NOW": "Sync Now",
       "C": {
-        "EMPTY_SYNC": "You're trying to sync an empty data object. If you are trying to setup syncing from a new app instance, just press OK to load the data from the server. Otherwise, please check your data.",
-        "FORCE_UPLOAD": "Forcing an upload of your data could lead to data loss. Continue?",
-        "FORCE_UPLOAD_AFTER_ERROR": "An Error occurred while uploading your local data. Try to force the update?",
-        "MIGRATE_LEGACY": "Legacy data detected while importing, do you want to try to migrate it?",
-        "NO_REMOTE_DATA": "No remote data found. Upload local to Remote?",
-        "TRY_LOAD_REMOTE_AGAIN": "Try to re-load data from remote once again?",
-        "UNABLE_TO_LOAD_REMOTE_DATA": "Unable to load data from remote. Do you want to try to overwrite the remote data with your local data? All remote data will be lost in the process."
+        "FORCE_UPLOAD": "Forcing an upload of your data could lead to data loss. Continue?"
       },
       "D_AUTH_CODE": {
         "FOLLOW_LINK": "Please open the following link and copy the auth code provided there into the input field below.",
@@ -1131,8 +884,6 @@
         "CHANGES_SINCE_LAST_SYNC": "Changes since last sync",
         "COMPARISON_RESULT": "Comparison Result",
         "DATE": "Date",
-        "LAMPORT_CLOCK": "Revision",
-        "LAST_CHANGE": "Last Change:",
         "LAST_SYNC": "Last Sync:",
         "LAST_SYNCED": "Last Synced",
         "LAST_WRITE": "Last Write",
@@ -1168,10 +919,6 @@
         "BTN_FORCE_UPLOAD": "Force Upload Local",
         "P1": "The remote sync data is incoherent!",
         "P2": "Affected model:",
-        "P3": "You have 2 Options:",
-        "P4": "1. Go to your other device and attempt do a complete sync there.",
-        "P5": "2. Overwrite the remote data with your local data. All remote changes will be lost!",
-        "P6": "Creating a backup of the data you overwrite is recommended!!!",
         "T1": "Last sync was incomplete!",
         "T2": "Your archive data was not properly uploaded during last sync:",
         "T3": "You have 2 Options:",
@@ -1183,19 +930,7 @@
         "SAVE_AND_ENABLE": "Save & Enable Sync",
         "TITLE": "Configure Sync"
       },
-      "D_PERMISSION": {
-        "DISABLE_SYNC": "Disable sync",
-        "PERM_FILE": "Give permission",
-        "TEXT": "<p>Your file permission for local syncing has been revoked.</p>",
-        "TITLE": "Sync: Local file permission denied"
-      },
       "FORM": {
-        "DROPBOX": {
-          "L_ACCESS_TOKEN": "Access Token (generated from Auth Code)"
-        },
-        "GOOGLE": {
-          "L_SYNC_FILE_NAME": "Sync File Name"
-        },
         "L_ENABLE_COMPRESSION": "Enable Compression (faster data transfer)",
         "L_ENABLE_ENCRYPTION": "Enable end-to-end encryption (experimental) – Make your data inaccessible for your sync provider",
         "L_ENABLE_SYNCING": "Enable Syncing",
@@ -1204,7 +939,6 @@
         "L_SYNC_INTERVAL": "Sync Interval",
         "L_SYNC_PROVIDER": "Sync Provider",
         "LOCAL_FILE": {
-          "L_SYNC_FILE_PATH_PERMISSION_VALIDATION": "Needs file access permission",
           "L_SYNC_FOLDER_PATH": "Sync folder path"
         },
         "TITLE": "Sync",
@@ -1224,29 +958,19 @@
       },
       "S": {
         "ALREADY_IN_SYNC": "Already in sync",
-        "ALREADY_IN_SYNC_NO_LOCAL_CHANGES": "No local changes – Already in sync",
         "BTN_CONFIGURE": "Configure",
         "BTN_FORCE_OVERWRITE": "Force Overwrite",
         "ERROR_CORS": "WebDAV Sync Error: Network request failed.\n\nThis might be a CORS issue. Please ensure:\n• Your WebDAV server allows Cross-Origin requests\n• The server URL is correct and accessible\n• You have a working internet connection",
         "ERROR_DATA_IS_CURRENTLY_WRITTEN": "Remote Data is currently being written",
-        "ERROR_FALLBACK_TO_BACKUP": "Something went wrong while importing the data. Falling back to local backup.",
-        "ERROR_INVALID_DATA": "Error while syncing. Invalid data",
-        "ERROR_NO_REV": "No valid rev for remote file",
         "ERROR_PERMISSION": "File access denied. Please check your filesystem permissions.",
         "ERROR_PERMISSION_FLATPAK": "File access denied. Grant filesystem permission via Flatseal or use a path inside ~/.var/app/",
         "ERROR_PERMISSION_SNAP": "File access denied. Run 'snap connect super-productivity:home' or use a path inside ~/snap/super-productivity/common/",
-        "ERROR_UNABLE_TO_READ_REMOTE_DATA": "Error while syncing. Unable to read remote data. Maybe you enabled encryption and your local password does not match the one used to encrypt the remote data?",
-        "IMPORTING": "Importing data",
         "INCOMPLETE_CFG": "Authentication for sync failed. Please check your Config!",
-        "INITIAL_SYNC_ERROR": "Initial Sync failed",
         "SUCCESS_DOWNLOAD": "Synced data from remote",
-        "SUCCESS_IMPORT": "Data imported",
         "SUCCESS_VIA_BUTTON": "Data successfully synced",
-        "UNKNOWN_ERROR": "Unknown Sync Error: {{err}}",
-        "UPLOAD_ERROR": "Unknown Upload Error (Settings correct?): {{err}}"
+        "UNKNOWN_ERROR": "Unknown Sync Error: {{err}}"
       },
       "SAFETY_BACKUP": {
-        "BACKUP_NOT_FOUND": "Backup with ID {{backupId}} not found",
         "BTN_CLEAR_ALL": "Clear All",
         "BTN_CREATE_MANUAL": "Create Manual Backup",
         "BTN_DELETE": "Delete",
@@ -1259,20 +983,15 @@
         "DELETE_FAILED": "Failed to delete backup",
         "DELETED_SUCCESS": "Backup deleted successfully",
         "DESCRIPTION": "Automatic backups are created before downloading data from remote during sync operations. Backups are organized in 4 smart slots: 2 most recent, 1 first from today, and 1 first from a day before today.",
-        "INVALID_ID_ERROR": "Invalid backup ID generated",
         "LAST_CHANGE_PREFIX": "Last change:",
         "LOADING": "Loading...",
         "NO_BACKUPS": "No safety backups available yet. Backups are created automatically before sync operations.",
         "REASON_BEFORE_UPDATE": "Automatic backup before sync",
         "REASON_MANUAL": "Manual backup",
-        "RESTORE_CONFIRM_MSG": "Are you sure you want to restore the backup from {{timestamp}}?\n\nThis will COMPLETELY REPLACE all your current data!\n\nReason: {{reason}}\n\nClick OK to proceed or Cancel to abort.",
-        "RESTORE_CONFIRM_TITLE": "Restore Backup",
-        "RESTORE_FAILED": "Failed to restore backup: {{error}}",
         "RESTORED_SUCCESS": "Backup restored successfully",
         "SLOT_BEFORE_TODAY": "First backup before today",
         "SLOT_RECENT": "Recent backup",
         "SLOT_TODAY": "First backup of today",
-        "TITLE": "Sync Safety Backups",
         "TOOLTIP_CLEAR_ALL": "Delete all safety backups",
         "TOOLTIP_CREATE_MANUAL": "Create a manual backup of all your data",
         "TOOLTIP_DELETE": "Delete this backup",
@@ -1282,8 +1001,7 @@
     },
     "TAG": {
       "D_CREATE": {
-        "CREATE": "Create Tag",
-        "EDIT": "Edit Tag"
+        "CREATE": "Create Tag"
       },
       "D_DELETE": {
         "CONFIRM_MSG": "Do you really want to delete the tag \"{{tagName}}\"? It will be removed from all tasks. This cannot be undone."
@@ -1327,26 +1045,14 @@
     "TASK": {
       "ADD_TASK_BAR": {
         "ADD_EXISTING_TASK": "Add existing task \"{{taskTitle}}\"",
-        "ADD_ISSUE_TASK": "Add issue #{{issueNr}} from {{issueType}}",
-        "ADD_TASK_TO_BOTTOM_OF_BACKLOG": "Add task to bottom of backlog",
-        "ADD_TASK_TO_BOTTOM_OF_TODAY": "Add task to bottom of list",
-        "ADD_TASK_TO_TOP_OF_BACKLOG": "Add task to top of backlog",
-        "ADD_TASK_TO_TOP_OF_TODAY": "Add task to top of list",
         "CREATE_NEW_TAGS": "Create new tags",
-        "CREATE_TASK": "Create new task",
         "DUE_BUTTON": "Due",
         "ESTIMATE_BUTTON": "Estimate",
-        "EXAMPLE": "Example: \"Some task title @fri 4pm +projectName #some-tag #some-other-tag 10m/3h\"",
-        "NO_DATE": "No Date",
-        "NO_TIME": "No Time",
         "PLACEHOLDER_CREATE": "A task title #tag @16:00",
         "PLACEHOLDER_SEARCH": "Add existing task or issues...",
         "SEARCH_INFO_TEXT": "Search and add issues and tasks from archive and other projects",
-        "START": "Press enter one more time to start",
         "TAGS_BUTTON": "Tags",
         "TODAY": "Today",
-        "TOGGLE_ADD_TO_BACKLOG_TODAY": "Toggle adding task to backlog / today's list",
-        "TOGGLE_ADD_TOP_OR_BOTTOM": "Toggle adding task to top & bottom of list",
         "TOMORROW": "Tomorrow",
         "TOOLTIP_ADD_TASK": "Add task",
         "TOOLTIP_ADD_TO_BACKLOG": "Add to backlog",
@@ -1364,11 +1070,9 @@
         "ADD_SUB_TASK": "Add Sub Task",
         "ATTACHMENTS": "Attachments ({{nr}})",
         "DUE": "Planned at",
-        "FROM_PARENT": "(from Parent)",
         "LOCAL_ATTACHMENTS": "Local Attachments",
         "NOTES": "Description",
         "PARENT": "Parent",
-        "REMINDER": "Reminder",
         "REPEAT": "Repeat",
         "SCHEDULE_TASK": "Schedule Task",
         "SUB_TASKS": "Sub Tasks ({{nr}})",
@@ -1389,11 +1093,8 @@
         "DROP_ATTACHMENT": "Drop here to attach to \"{{title}}\"",
         "DUPLICATE": "Duplicate",
         "EDIT_SCHEDULED": "Reschedule",
-        "EDIT_TAGS": "Edit tags",
-        "EDIT_TASK_TITLE": "Edit title",
         "FOCUS_SESSION": "Start Focus Session",
         "MARK_DONE": "Mark as done",
-        "MARK_UNDONE": "Mark as undone",
         "MOVE_TO_BACKLOG": "Move to backlog",
         "MOVE_TO_OTHER_PROJECT": "Move to Project",
         "MOVE_TO_REGULAR": "Move to regular list",
@@ -1402,9 +1103,7 @@
         "OPEN_ISSUE": "Open in browser",
         "OPEN_TIME": "Time Tracking",
         "REMOVE_FROM_MY_DAY": "Remove from Today",
-        "REPEAT_EDIT": "Edit repeat task config",
         "SCHEDULE": "Schedule task",
-        "SHOW_UPDATES": "Show updates",
         "TOGGLE_ATTACHMENTS": "Show/Hide attachments",
         "TOGGLE_DETAIL_PANEL": "Show/Hide additional info",
         "TOGGLE_DONE": "Mark as done/undone",
@@ -1423,6 +1122,10 @@
         "MSG": "Do you want to create the new tags {{tagsTxt}}?",
         "OK": "Create tags"
       },
+      "D_CONFIRM_DELETE": {
+        "MSG": "Are you sure you want to delete the task \"{{title}}\"?",
+        "OK": "Delete"
+      },
       "D_REMINDER_VIEW": {
         "ADD_ALL_TO_TODAY": "Add all to today",
         "ADD_TO_TODAY": "Add to today",
@@ -1433,24 +1136,17 @@
         "DONE": "Done",
         "DUE_TASK": "Reminder for planned task",
         "DUE_TASKS": "Reminder for planned tasks",
-        "FOR_CURRENT": "Task is due. Do you want to start working on it?",
-        "FOR_OTHER": "Task is due. Do you want to start working on it?",
-        "FROM_PROJECT": "From Project: \"{{title}}\"",
-        "FROM_TAG": "From Tag: \"{{title}}\"",
         "RESCHEDULE_EDIT": "Edit (Re-schedule)",
         "RESCHEDULE_UNTIL_TOMORROW": "Re-schedule for tomorrow",
         "SNOOZE": "Snooze",
         "SNOOZE_ALL": "Snooze all",
         "START": "Start",
-        "SWITCH_CONTEXT_START": "Switch Context & Start",
         "UNSCHEDULE": "Unschedule",
         "UNSCHEDULE_ALL": "Unschedule all"
       },
       "D_SCHEDULE_TASK": {
-        "MOVE_TO_BACKLOG": "Move task to backlog until scheduled",
         "QA_NEXT_MONTH": "Schedule next Month",
         "QA_NEXT_WEEK": "Schedule next Week",
-        "QA_REMOVE_TODAY": "Remove task from today",
         "QA_TODAY": "Schedule Today",
         "QA_TOMORROW": "Schedule Tomorrow",
         "REMIND_AT": "Remind at",
@@ -1491,16 +1187,13 @@
       "S": {
         "CANNOT_ASSIGN_PROJECT_FOR_REPEATABLE_TASK": "Cannot assign project via short syntax for repeatable tasks!",
         "CREATED_FOR_PROJECT": "Created task \"{{taskTitle}}\" for project \"{{projectTitle}}\"",
-        "CREATED_FOR_PROJECT_ACTION": "Go to Project",
         "DELETED": "Deleted task \"{{title}}\"",
         "FOUND_MOVE_FROM_BACKLOG": "Moved task <strong>{{title}}</strong> from backlog to todays task list",
         "FOUND_MOVE_FROM_OTHER_LIST": "Added task <strong>{{title}}</strong> from <strong>{{contextTitle}}</strong> to current list",
         "FOUND_RESTORE_FROM_ARCHIVE": "Restored task <strong>{{title}}</strong> related to issue from archive",
         "GO_TO_TASK": "Go to Task",
-        "LAST_TAG_DELETION_WARNING": "You're trying to remove the last tag of a non project task. This is not allowed!",
         "MOVED_TO_ARCHIVE": "Moved {{nr}} tasks to archive",
         "MOVED_TO_PROJECT": "Moved task \"{{taskTitle}}\" to project \"{{projectTitle}}\"",
-        "MOVED_TO_PROJECT_ACTION": "Go to Project",
         "REMINDER_ADDED": "Scheduled <strong>{{title}}</strong> at <strong>{{date}}</strong>",
         "REMINDER_DELETED": "Deleted reminder for task",
         "REMINDER_UPDATED": "Updated reminder for task \"{{title}}\"",
@@ -1577,7 +1270,6 @@
         "FRIDAY": "Friday",
         "INHERIT_SUBTASKS": "Inherit subtasks",
         "INHERIT_SUBTASKS_DESCRIPTION": "When enabled, subtasks from the most recent task instance will be recreated with the repeating task",
-        "IS_ADD_TO_BOTTOM": "Move task to bottom of list",
         "MONDAY": "Monday",
         "NOTES": "Default notes",
         "ORDER": "Order",
@@ -1595,11 +1287,7 @@
         "REMOVE_INSTANCE": "Remove today",
         "REPEAT_CYCLE": "Repeat cycle",
         "REPEAT_EVERY": "Repeat every",
-        "REPEAT_FROM_COMPLETION_DATE": "Repeat, when done",
-        "REPEAT_FROM_COMPLETION_DATE_DESCRIPTION": "The next task is created from your completion date, not from start date. (e.g., 'Every 7 days' = 7 days after completion)",
         "SATURDAY": "Saturday",
-        "SCHEDULE_TYPE_FIXED": "Fixed schedule (e.g., every Monday, 1st of month)",
-        "SCHEDULE_TYPE_FLEXIBLE": "After completion (e.g., 7 days after I finish)",
         "SCHEDULE_TYPE_LABEL": "Schedule type",
         "START_DATE": "Start date",
         "START_TIME": "Scheduled start time",
@@ -1636,7 +1324,6 @@
         "SCHEDULED_THIS_WEEK": "This Week",
         "SCHEDULED_TODAY": "Today",
         "SCHEDULED_TOMORROW": "Tomorrow",
-        "SORT_BY": "",
         "SORT_CREATION_DATE": "Creation Date",
         "SORT_DEFAULT": "Default",
         "SORT_NAME": "Name",
@@ -1647,8 +1334,7 @@
         "TIME_2HOUR": "> 2 Hours",
         "TIME_10MIN": "> 10 Minutes",
         "TIME_30MIN": "> 30 Minutes",
-        "TIME_SPENT": "Time Spent",
-        "TITLE": "Customize Task View"
+        "TIME_SPENT": "Time Spent"
       }
     },
     "TIME_TRACKING": {
@@ -1681,7 +1367,6 @@
       },
       "D_TRACKING_REMINDER": {
         "CREATE_AND_TRACK": "<em>Create</em> and track to",
-        "IDLE_FOR": "You have been idle for:",
         "NOTIFICATION_TITLE": "Track your time!",
         "TASK": "Task",
         "TRACK_TO": "Track to:",
@@ -1693,7 +1378,7 @@
         "DAYS_WORKED": "Days, worked:",
         "MONTH_WORKED": "Month worked:",
         "REPEATING_TASK": "Repeating task",
-        "RESTORE_TASK_FROM_ARCHIVE": "Restore Task From Archive",
+        "RESTORE_TASK_FROM_ARCHIVE": "Restore task from archive",
         "TASKS": "Tasks",
         "TOTAL_TIME": "Time spent total:",
         "WEEK_NR": "Week {{nr}}",
@@ -1779,7 +1464,6 @@
     "DELETE": "Delete",
     "DISMISS": "Dismiss",
     "DO_IT": "Do it!",
-    "DONT_SHOW_AGAIN": "Don't show again",
     "DUPLICATE": "Duplicate",
     "DURATION_DESCRIPTION": "e.g. \"5h 23m\" which results in 5 hours and 23 minutes",
     "EDIT": "Edit",
@@ -1789,26 +1473,21 @@
     "HIDE": "Hide",
     "ICON_INP_DESCRIPTION": "All utf-8 emojis are also supported!",
     "INBOX_PROJECT_TITLE": "Inbox",
-    "LOGIN": "Login",
-    "LOGOUT": "Logout",
     "MINUTES": "{{m}} minutes",
     "MOVE_BACKWARD": "Move Backward",
     "MOVE_FORWARD": "Move Forward",
-    "NEXT": "Next",
     "NO_CON": "You are currently offline. Please reconnect to the internet.",
     "NONE": "None",
     "OK": "Ok",
     "OVERDUE": "Overdue",
-    "PREVIOUS": "Previous",
     "REMOVE": "Remove",
-    "RESET": "Reset",
     "SAVE": "Save",
+    "SHARE": "Share",
     "SUBMIT": "Submit",
     "TITLE": "Title",
     "TODAY_TAG_TITLE": "Today",
     "TRACKING_INTERVAL_DESCRIPTION": "Track time using this interval in milliseconds. You might want to change this to reduce disk writes. See issue #2355.",
     "UNDO": "Undo",
-    "UPDATE": "Update",
     "WITHOUT_PROJECT": "Without Project",
     "YESTERDAY": "Yesterday"
   },
@@ -1838,9 +1517,7 @@
     "CALENDARS": {
       "BROWSER_WARNING": "Due to cross origin restrictions <b>this will likely NOT work with the Browser version of Super Productivity.<br /> Please <a href=\"https://super-productivity.com/download/\">download the desktop version</a> to use this feature!</b>",
       "CAL_PATH": "Url of the iCal source",
-      "CAL_PROVIDERS": "Calendar providers (experimental and optional)",
       "CHECK_UPDATES": "Check for remote updates every X",
-      "DEFAULT_PROJECT": "Default Project for added calendar tasks",
       "HELP": "You can integrate calendars to be reminded and add them as tasks within Super Productivity. The integration works by using the iCal format. For this to work your calendars need to be accessible either over the internet or via file system.",
       "SHOW_BANNER_THRESHOLD": "Show a notification X before the event (blank for disabled)"
     },
@@ -1850,7 +1527,6 @@
     },
     "FOCUS_MODE": {
       "HELP": "Focus Mode opens up a distraction free screen to help you focus on your current task.",
-      "L_ALWAYS_OPEN_FOCUS_MODE": "Always open focus mode, when tracking",
       "L_IS_PLAY_TICK": "Play ticking sound during focus sessions",
       "L_MANUAL_BREAK_START": "Manually start breaks (Pomodoro)",
       "L_PAUSE_TRACKING_DURING_BREAK": "Pause task tracking during breaks",
@@ -1909,7 +1585,6 @@
       "TASK_MOVE_TO_PROJECT": "Open move task to project menu",
       "TASK_OPEN_CONTEXT_MENU": "Open task context menu",
       "TASK_OPEN_ESTIMATION_DIALOG": "Edit estimation / time spent",
-      "TASK_PLAN_FORDAY": "Plan for day",
       "TASK_SCHEDULE": "Schedule Task",
       "TASK_SHORTCUTS": "Tasks",
       "TASK_SHORTCUTS_INFO": "The following shortcuts apply for the currently selected task (selected via tab or mouse).",
@@ -1917,7 +1592,6 @@
       "TASK_TOGGLE_DONE": "Toggle Done",
       "TITLE": "Keyboard Shortcuts",
       "TOGGLE_BACKLOG": "Show/Hide Task Backlog",
-      "TOGGLE_BOOKMARKS": "Show/Hide Bookmark Bar",
       "TOGGLE_ISSUE_PANEL": "Show/Hide Issue Panel",
       "TOGGLE_PLAY": "Start/Stop Task",
       "TOGGLE_SIDE_NAV": "Focus Sidenav",
@@ -1985,10 +1659,10 @@
       "IS_AUTO_MARK_PARENT_AS_DONE": "Mark parent task as done, when all sub tasks are done",
       "IS_CONFIRM_BEFORE_EXIT": "Confirm before exiting the app",
       "IS_CONFIRM_BEFORE_EXIT_WITHOUT_FINISH_DAY": "Confirm before exiting the app without finishing day first",
+      "IS_CONFIRM_BEFORE_TASK_DELETE": "Confirm before deleting tasks",
       "IS_DARK_MODE": "Dark Mode",
       "IS_DISABLE_ANIMATIONS": "Disable all animations",
       "IS_DISABLE_CELEBRATION": "Disable celebration in daily summary",
-      "IS_HIDE_NAV": "Hide navigation until main header is hovered (desktop only)",
       "IS_MINIMIZE_TO_TRAY": "Minimize to tray (desktop only)",
       "IS_OVERLAY_INDICATOR_ENABLED": "Enable overlay indicator window (desktop linux/gnome)",
       "IS_SHOW_TIP_LONGER": "Show productivity tip on app start a little longer",
@@ -1997,29 +1671,13 @@
       "IS_TURN_OFF_MARKDOWN": "Turn off markdown parsing for task notes",
       "IS_USE_CUSTOM_WINDOW_TITLE_BAR": "Use custom title bar (Windows/Linux only)",
       "IS_USE_CUSTOM_WINDOW_TITLE_BAR_HINT": "Requires restart to take effect",
-      "IS_USE_MINIMAL_SIDE_NAV": "",
       "START_OF_NEXT_DAY": "Start time of the next day",
       "START_OF_NEXT_DAY_HINT": "from when (in hour) you want to count the next day has started. default is midnight which is 0.",
       "TASK_NOTES_TPL": "Task description template",
       "THEME": "Theme",
       "THEME_EXPERIMENTAL": "Theme (experimental)",
       "THEME_SELECT_LABEL": "Select Theme",
-      "TITLE": "Misc Settings",
-      "USER_PROFILES": "",
-      "USER_PROFILES_HINT": ""
-    },
-    "PAST": {
-      "A_DAY": "",
-      "A_MINUTE": "",
-      "A_MONTH": "",
-      "A_YEAR": "",
-      "AN_HOUR": "",
-      "DAYS": "",
-      "FEW_SECONDS": "",
-      "HOURS": "",
-      "MINUTES": "",
-      "MONTHS": "",
-      "YEARS": ""
+      "TITLE": "Misc Settings"
     },
     "POMODORO": {
       "BREAK_DURATION": "Duration of short breaks",
@@ -2032,6 +1690,7 @@
       "DEFAULT_TASK_REMIND_OPTION": "Default remind option selected when creating tasks",
       "DISABLE_REMINDERS": "Disable all reminders",
       "IS_COUNTDOWN_BANNER_ENABLED": "Show countdown banner before reminders are due",
+      "IS_FOCUS_WINDOW": "Focus application window when reminder is triggered",
       "TITLE": "Reminders"
     },
     "SCHEDULE": {
@@ -2043,9 +1702,7 @@
       "L_WORK_END": "Work Day End",
       "L_WORK_START": "Work Day Start",
       "LUNCH_BREAK_START_END_DESCRIPTION": "e.g. 13:00",
-      "MONTH": "Month",
       "TITLE": "Schedule",
-      "WEEK": "Week",
       "WORK_START_END_DESCRIPTION": "e.g. 17:00"
     },
     "SHORT_SYNTAX": {
@@ -2091,18 +1748,6 @@
       "L_TRACKING_INTERVAL": "Time tracking interval (EXPERIMENTAL)",
       "L_TRACKING_REMINDER_MIN_TIME": "Time to wait before showing tracking reminder Banner",
       "TITLE": "Time Tracking"
-    },
-    "TIMELINE": {
-      "CAL_PROVIDERS": "",
-      "CAL_PROVIDERS_ADD": "",
-      "CAL_PROVIDERS_INFO": "",
-      "HELP": "",
-      "L_CAL_PATH": "",
-      "L_IS_WORK_START_END_ENABLED": "",
-      "L_WORK_END": "",
-      "L_WORK_START": "",
-      "TITLE": "",
-      "WORK_START_END_DESCRIPTION": ""
     }
   },
   "GLOBAL": {
@@ -2140,7 +1785,6 @@
     "COPY_TO_CLIPPBOARD": "Copied to clipboard",
     "DUPLICATE_PROJECT_ERROR": "The project could not be duplicated",
     "DUPLICATE_PROJECT_SUCCESS": "Project duplicated successfully",
-    "ERR_COMPRESSION": "Error for compression interface",
     "FILE_DOWNLOADED": "{{fileName}} downloaded",
     "FILE_DOWNLOADED_BTN": "Open folder",
     "NAVIGATE_TO_TASK_ERR": "Could not focus to task. Did you delete it?",
@@ -2152,7 +1796,6 @@
     "SHARE_FAILED": "Sharing failed. Please copy manually.",
     "SHARE_FAILED_FALLBACK": "Sharing failed. Copied to clipboard instead.",
     "SHARE_UNAVAILABLE_FALLBACK": "Copied to clipboard.",
-    "SHORTCUT_WARN_OPEN_BOOKMARKS_FROM_TAG": "{{keyCombo}} pressed, but open bookmarks shortcut is only available when in project context.",
     "UNPLANNED_TODAY_TASKS": "Unplanned all tasks from Today"
   },
   "GPB": {
@@ -2193,27 +1836,17 @@
       "SYNC": "Howto: Configure Sync"
     },
     "METRICS": "Metrics",
-    "NO_PROJECT_INFO": "No projects available. You can create a new project by clicking the \"Create Project\" button.",
-    "NO_TAG_INFO": "There are currently no tags. You can add tags by entering `#yourTagName` when adding or editing tasks.",
     "NO_TASKS_TO_TRACK": "Add a task first to start tracking time",
-    "NOTES": "Notes",
-    "NOTES_PANEL_INFO": "Notes can only be shown from the schedule and the regular task list views.",
     "PLANNER": "Planner",
-    "PROCRASTINATE": "Procrastinate",
     "PROJECT_MENU": "Project Menu",
-    "PROJECT_SETTINGS": "Project Settings",
     "PROJECTS": "Projects",
     "QUICK_HISTORY": "Quick History",
     "SCHEDULE": "Schedule",
     "SEARCH": "Search",
     "SETTINGS": "Settings",
     "SHARE_TASK_LIST_MARKDOWN": "Share Task List",
-    "SHOW_SEARCH_BAR": "Show Search Bar",
     "SIDE_PANEL_MENU": "Side Panel Menu",
     "TAGS": "Tags",
-    "TASK_LIST": "Task List",
-    "TASKS": "Tasks",
-    "TOGGLE_SHOW_BOOKMARKS": "Show/Hide Bookmarks",
     "TOGGLE_SHOW_ISSUE_PANEL": "Show/Hide Issue Panel",
     "TOGGLE_SHOW_NOTES": "Show/Hide Project Notes",
     "TOGGLE_TRACK_TIME": "Start/Stop tracking time",
@@ -2234,7 +1867,6 @@
       "PLURAL": "{{count}} done parent tasks have been archived",
       "SINGULAR": "{{count}} done parent task has been archived"
     },
-    "BACK": "",
     "BREAK_LABEL": "Breaks (nr / time)",
     "CELEBRATE": "Take a moment to <i>celebrate!</i>",
     "CLEAR_ALL_CONTINUE": "Clear all done and continue",
@@ -2285,9 +1917,7 @@
     "CONFIGURATION": "Configuration",
     "CONFIGURE": "Configure",
     "CONFIRM_REMOVE": "Are you sure you want to remove the plugin \"{{name}}\"?",
-    "DISABLED": "Disabled",
     "ELECTRON_API_NOT_AVAILABLE": "Electron API is not available",
-    "ENABLED": "Enabled",
     "ERROR": "Error",
     "ERROR_LOADING_PLUGIN": "Error loading plugin",
     "EXPERIMENTAL_WARNING": "The plugin system is in an experimental stage and should be used with extreme caution.",
@@ -2305,7 +1935,6 @@
     "GRANT_PERMISSION": "Grant Permission",
     "HOOKS": "Hooks",
     "ID": "ID:",
-    "INDEX_HTML_NOT_LOADED": "Plugin index.html not loaded",
     "INSTALL_PLUGIN": "Install Plugin",
     "INSTALL_WARNING": "Before installing a plugin, ensure you trust its source and understand the permissions it requests.",
     "INSTALLING": "Installing...",
@@ -2319,16 +1948,6 @@
     "MIN_VERSION": "Min. Version:",
     "NO_ADDITIONAL_INFO": "No additional information available",
     "NO_CONTENT_PROVIDED": "No content provided",
-    "NO_PLUGIN_CONTEXT_ACTION": "Plugin does not have permission to perform actions",
-    "NO_PLUGIN_CONTEXT_HEADER_BUTTON": "Plugin does not have permission to add header buttons",
-    "NO_PLUGIN_CONTEXT_LOADING": "Plugin does not have context for data loading",
-    "NO_PLUGIN_CONTEXT_MENU_ENTRY": "Plugin does not have permission to add menu entries",
-    "NO_PLUGIN_CONTEXT_NODE": "Plugin does not have permission to execute Node.js code",
-    "NO_PLUGIN_CONTEXT_PERSISTENCE": "Plugin does not have permission to persist data",
-    "NO_PLUGIN_CONTEXT_SHORTCUT": "Plugin does not have permission to register shortcuts",
-    "NO_PLUGIN_CONTEXT_SIDE_PANEL": "Plugin does not have permission to add side panel buttons",
-    "NO_PLUGIN_CONTEXT_SYNC": "Plugin does not have permission to use sync",
-    "NO_PLUGIN_ID_PROVIDED_FOR_HTML": "No plugin ID provided for HTML content",
     "NO_PLUGIN_MANIFEST_NODE": "Plugin manifest does not include Node.js module",
     "NODE_EXECUTION_REQUIRED": "This plugin requires Node.js execution which is only available in the desktop app.",
     "NODE_ONLY_DESKTOP": "Node.js execution is only available in the desktop app",
@@ -2338,11 +1957,7 @@
     "PERMISSIONS": "Permissions",
     "PLEASE_SELECT_ZIP_FILE": "Please select a ZIP file",
     "PLUGIN_DIALOG_TITLE": "Plugin Message",
-    "PLUGIN_DOES_NOT_SUPPORT_IFRAME": "This plugin does not support iframe interface",
-    "PLUGIN_ID_NOT_PROVIDED": "Plugin ID not provided",
     "PLUGIN_JS_NOT_FOUND": "Plugin JavaScript file (plugin.js) not found in ZIP file",
-    "PLUGIN_NOT_FOUND": "Plugin not found",
-    "PLUGIN_SYSTEM_FAILED_INIT": "Plugin system failed to initialize",
     "PROJECT_DOES_NOT_EXIST": "Project does not exist",
     "PROJECT_NOT_FOUND": "Project '{{contextId}}' not found",
     "RECOMMENDATION": "Only install plugins from trusted sources and review their code if possible. Always backup your data before installing new plugins.",
@@ -2367,7 +1982,6 @@
     "UNABLE_TO_PERSIST_DATA": "Unable to persist data to plugin storage",
     "UNKNOWN_ERROR": "An unknown error occurred",
     "UPLOAD_PLUGIN_INSTRUCTION": "Upload a plugin ZIP file to install it:",
-    "USER_DECLINED_NODE_PERMISSION": "User declined Node.js execution permission",
     "VALIDATION_FAILED": "Validation failed"
   },
   "PM": {
@@ -2375,17 +1989,14 @@
   },
   "PS": {
     "GLOBAL_SETTINGS": "Global Settings",
-    "ISSUE_INTEGRATION": "Issue Integration",
     "NO_PLUGINS_INSTALLED": "No plugins are currently installed",
     "PLUGINS": "Plugins",
     "PRIVACY_POLICY": "Privacy Policy",
     "PRODUCTIVITY_HELPER": "Productivity Helper",
     "PROJECT_SETTINGS": "Project Specific Settings",
     "PROVIDE_FEEDBACK": "Provide Feedback",
-    "RELOAD": "Reload",
     "SYNC_EXPORT": "Sync & Export",
-    "TAG_SETTINGS": "Tag Specific Settings",
-    "TOGGLE_DARK_MODE": "Toggle Dark Mode"
+    "TAG_SETTINGS": "Tag Specific Settings"
   },
   "SCHEDULE": {
     "LAST": "Last:",
@@ -2395,26 +2006,7 @@
     "NO_SCHEDULED_TITLE": "Scheduled Tasks for Day",
     "REPEATED_TASKS": "Repeated Tasks",
     "SCHEDULED_TASKS": "Scheduled tasks",
-    "SCHEDULED_TASKS_WITH_TIME": "Scheduled Tasks with Start Time",
-    "START_TASK": "Start task and remove reminder"
-  },
-  "THEMES": {
-    "amber": "amber",
-    "blue": "blue",
-    "blue-grey": "blue-grey",
-    "cyan": "cyan",
-    "deep-orange": "deep-orange",
-    "deep-purple": "deep-purple",
-    "green": "green",
-    "indigo": "indigo",
-    "light-blue": "light-blue",
-    "light-green": "light-green",
-    "lime": "lime",
-    "pink": "pink",
-    "purple": "purple",
-    "SELECT_THEME": "Select Theme",
-    "teal": "teal",
-    "yellow": "yellow"
+    "SCHEDULED_TASKS_WITH_TIME": "Scheduled Tasks with Start Time"
   },
   "USER_PROFILES": {
     "ACTIVE": "Active",
@@ -2428,21 +2020,18 @@
     "EXISTING_PROFILES": "Existing Profiles",
     "EXPORT_PROFILE": "Export Profile",
     "MANAGE_PROFILES": "Manage Profiles...",
-    "OPEN_PROFILES_FOLDER": "Open Profiles Folder",
     "PROFILE_NAME": "Profile Name",
     "PROFILE_NAME_PLACEHOLDER": "e.g., Work, Personal",
     "RENAME": "Rename",
     "SAVE": "Save"
   },
   "V": {
-    "E_1TO10": "Please enter a value between 1 and 10",
     "E_DATETIME": "The entered value is not a datetime!",
     "E_DURATION": "Please enter a valid duration (e.g. 1h)",
     "E_MAX": "Should not be bigger than {{val}}",
     "E_MAX_LENGTH": "Should be max {{val}} characters long",
     "E_MIN": "Should not be smaller than {{val}}",
     "E_MIN_LENGTH": "Should be at least {{val}} characters long",
-    "E_PATTERN": "Invalid input",
     "E_REQUIRED": "This field is required"
   },
   "WW": {
@@ -2453,10 +2042,7 @@
     "DONE_TASKS_IN_ARCHIVE": "There are currently no done tasks here, but there are some already archived.",
     "ESTIMATE_REMAINING": "Estimate remaining:",
     "FINISH_DAY": "Finish Day",
-    "FINISH_DAY_FOR_PROJECT": "Finish Day for this Project",
-    "FINISH_DAY_FOR_TAG": "Finish Day for this Tag",
     "FINISH_DAY_TOOLTIP": "Evaluate your day, move all done tasks to the archive (optionally) and/or plan your next day.",
-    "HELP_PROCRASTINATION": "Help I'm procrastinating!",
     "LATER_TODAY": "Later Today",
     "MOVE_DONE_TO_ARCHIVE": "Move done to archive",
     "NO_DONE_TASKS": "There are currently no done tasks",

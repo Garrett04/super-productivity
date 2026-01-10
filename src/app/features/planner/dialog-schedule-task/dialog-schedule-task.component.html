@@ -31,12 +31,14 @@
 </div>
 
 <mat-dialog-content>
-  <mat-calendar
-    (keydown)="onKeyDownOnCalendar($event)"
-    [selected]="selectedDate"
-    [minDate]="minDate"
-    (selectedChange)="dateSelected($event)"
-  ></mat-calendar>
+  @if (isConfigReady()) {
+    <mat-calendar
+      (keydown)="onKeyDownOnCalendar($event)"
+      [selected]="selectedDate"
+      [minDate]="minDate"
+      (selectedChange)="dateSelected($event)"
+    ></mat-calendar>
+  }
 
   @if (isShowEnterMsg) {
     <div

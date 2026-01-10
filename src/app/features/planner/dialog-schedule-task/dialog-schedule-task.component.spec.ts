@@ -75,6 +75,11 @@ describe('DialogScheduleTaskComponent', () => {
           initialState: {
             [CONFIG_FEATURE_NAME]: {
               sync: {},
+              localization: {
+                lng: undefined,
+                dateTimeLocale: undefined,
+                firstDayOfWeek: 0,
+              },
             } as any,
           },
         }),
@@ -314,6 +319,7 @@ describe('DialogScheduleTaskComponent', () => {
 
       component.data = { task: mockTask };
       component.task = mockTask;
+      fixture.detectChanges();
 
       await component.ngAfterViewInit();
 
@@ -348,6 +354,7 @@ describe('DialogScheduleTaskComponent', () => {
 
       component.data = { task: mockTask };
       component.task = mockTask;
+      fixture.detectChanges();
 
       await component.ngAfterViewInit();
 
@@ -377,6 +384,7 @@ describe('DialogScheduleTaskComponent', () => {
 
       component.data = { task: mockTask };
       component.task = mockTask;
+      fixture.detectChanges();
 
       await component.ngAfterViewInit();
 

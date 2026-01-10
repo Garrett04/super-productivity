@@ -74,6 +74,7 @@ export class SyncPage extends BasePage {
     // Use the existing providerSelect locator which targets the mat-select directly
     const selectElement = this.providerSelect;
 
+    let webdavSelected = false;
     for (let attempt = 0; attempt < 5; attempt++) {
       // Ensure the select is in view
       await selectElement.scrollIntoViewIfNeeded({ timeout: 5000 }).catch(async () => {
@@ -121,15 +122,29 @@ export class SyncPage extends BasePage {
 
         if (webdavVisible) {
           await webdavOption.click();
-          // Wait for dropdown to close and form to update
-          await this.page.waitForTimeout(500);
-          break;
+          // Wait for dropdown to close and verify form fields appeared
+          const formAppeared = await this.baseUrlInput
+            .waitFor({ state: 'visible', timeout: 3000 })
+            .then(() => true)
+            .catch(() => false);
+          if (formAppeared) {
+            webdavSelected = true;
+            break;
+          }
+          // Form didn't appear, retry selection
         }
       }
 
       // Close dropdown if it opened but option not found, then retry
       await this.page.keyboard.press('Escape');
       await this.page.waitForTimeout(500);
+    }
+
+    // Verify WebDAV was selected before proceeding
+    if (!webdavSelected) {
+      throw new Error(
+        'Failed to select WebDAV option after 5 attempts. Check if the dropdown is properly rendered.',
+      );
     }
 
     // Wait for form fields to be visible before filling

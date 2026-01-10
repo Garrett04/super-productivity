@@ -1,6 +1,9 @@
 package com.superproductivity.superproductivity
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +13,7 @@ import android.view.View
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.anggrayudi.storage.SimpleStorageHelper
 import com.getcapacitor.BridgeActivity
 import com.superproductivity.superproductivity.plugins.SafBridgePlugin
@@ -35,6 +39,16 @@ class CapacitorMainActivity : BridgeActivity() {
 
     private val storageHelper =
         SimpleStorageHelper(this) // for scoped storage permission management on Android 10+
+
+    private val timerCompleteReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == FocusModeForegroundService.ACTION_TIMER_COMPLETE) {
+                val isBreak = intent.getBooleanExtra(FocusModeForegroundService.EXTRA_IS_BREAK, false)
+                Log.d("SP_FOCUS", "Timer complete broadcast received, isBreak=$isBreak")
+                callJSInterfaceFunctionIfExists("next", "onFocusModeTimerComplete$", isBreak.toString())
+            }
+        }
+    }
 
     override fun load() {
         val result = WebViewCompatibilityChecker.evaluate(this)
@@ -125,7 +139,12 @@ class CapacitorMainActivity : BridgeActivity() {
             }
         }
 
-        
+        // Register broadcast receiver for focus mode timer completion
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+            timerCompleteReceiver,
+            IntentFilter(FocusModeForegroundService.ACTION_TIMER_COMPLETE)
+        )
+
         // Handle initial intent (cold start)
         handleIntent(intent)
     }
@@ -251,6 +270,11 @@ class CapacitorMainActivity : BridgeActivity() {
         javaScriptInterface.callJavaScriptFunction("if($fullObjectPath && $fnFullName)$fnFullName($fnParam)")
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(timerCompleteReceiver)
+    }
 
     companion object {
         const val WINDOW_INTERFACE_PROPERTY: String = "SUPAndroid"
